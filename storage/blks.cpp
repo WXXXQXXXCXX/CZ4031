@@ -23,8 +23,8 @@ bool Memory::new_blk(){
     num_blks_used ++;
     int new_blk = mem.size();
     mem.insert(mem.end(), blk_size, 0x00);
-    blocks[new_blk] = 0;
-    cur_ptr = new_blk;
+    blocks[new_blk/blk_size] = 0;
+    cur_ptr = new_blk/blk_size;
     return true;
 
 }
@@ -35,9 +35,13 @@ uint Memory::get_num_blks(){
 
 uint Memory::get_mem_used(){
     map<long, int>::iterator itr;
+    int i = 0;
+    cout<<"=========memory use per block========="<<"\n";
     for(itr = blocks.begin(); itr != blocks.end(); itr ++){
-        cout<< itr->second << "\n";
+        cout<<"blk no."<< i <<": "<<itr->second << "\n";
+        i++;
     }
+    cout<<"=========memory use in total========="<<"\n";
     cout<<"total occupied bytes: "<<num_rec*REC_LENGTH<<"\n";
     cout<<"memory occupied by all blocks: "<<blk_size*num_blks_used;
     return blk_size*num_blks_used;
@@ -47,16 +51,19 @@ bool Memory::rec_insert(RecPtr* rec, Record data){
 
     if (garbage.size()>0){
         RecPtr * free_space = garbage.back();
-        long pos = free_space->rec;
+        int pos = free_space->pos;
+
+        int blk = pos / blk_size;
+        int offs = pos % blk_size;
+
         memcpy(&mem.at(pos), &data, REC_LENGTH);
         memcpy(&mem.at(pos), &data.tconst, REC_LENGTH);
 
         memcpy(&mem.at(pos+RATING_OFFS), &data.avg_rating, sizeof(data.avg_rating));
         memcpy(&mem.at(pos+VOTE_OFFS), &data.num_votes, sizeof(data.avg_rating));
         garbage.pop_back();
-        blocks[free_space->blk] += REC_LENGTH;
-        rec->blk = free_space->blk;
-        rec->rec =free_space->rec;
+        blocks[blk] += REC_LENGTH;
+        rec->pos = pos;
         //rec = free_space;
         return true;
     }
@@ -75,40 +82,41 @@ bool Memory::rec_insert(RecPtr* rec, Record data){
     
 
     uint in_blk_offs = blocks[cur_ptr];
-    memcpy(&mem.at(cur_ptr+in_blk_offs), &data.tconst, REC_LENGTH);
+    memcpy(&mem.at(cur_ptr*blk_size+in_blk_offs), &data.tconst, REC_LENGTH);
 
-    memcpy(&mem.at(cur_ptr+in_blk_offs+RATING_OFFS), &data.avg_rating, sizeof(data.avg_rating));
-    memcpy(&mem.at(cur_ptr+in_blk_offs+VOTE_OFFS), &data.num_votes, sizeof(data.avg_rating));
+    memcpy(&mem.at(cur_ptr*blk_size+in_blk_offs+RATING_OFFS), &data.avg_rating, sizeof(data.avg_rating));
+    memcpy(&mem.at(cur_ptr*blk_size+in_blk_offs+VOTE_OFFS), &data.num_votes, sizeof(data.avg_rating));
     blocks[cur_ptr] += REC_LENGTH;
     num_rec ++;
-    rec->blk=cur_ptr;
-    rec->rec=cur_ptr + in_blk_offs;
+    rec->pos = cur_ptr * blk_size + in_blk_offs;
     return true;
 }
 
 bool Memory::rec_delete(RecPtr* rec){
     garbage.push_back(rec);
-    blocks[rec->blk] -= REC_LENGTH;
+    int blk = rec->pos / blk_size;
+    int offs = rec->pos%blk_size;
+    blocks[blk] -= REC_LENGTH;
     num_rec --;
     return true;
 }
 
 bool Memory::rec_read(RecPtr *rec, Record *data) {
     for(int i=0; i<TCONST_LEN-1; i++){
-        data->tconst[i] = mem.at(rec->rec+i);
+        data->tconst[i] = mem.at(rec->pos+i);
     }
     data->tconst[TCONST_LEN-1]='\0';
     float rating;
-    byte b_rating[] = {mem.at(rec->rec+RATING_OFFS),
-                       mem.at(rec->rec+RATING_OFFS+1),
-                       mem.at(rec->rec+RATING_OFFS+2),
-                       mem.at(rec->rec+RATING_OFFS+3) };
+    byte b_rating[] = {mem.at(rec->pos+RATING_OFFS),
+                       mem.at(rec->pos+RATING_OFFS+1),
+                       mem.at(rec->pos+RATING_OFFS+2),
+                       mem.at(rec->pos+RATING_OFFS+3) };
     int votes;
     byte b_votes[] = {
-        mem.at(rec->rec+VOTE_OFFS),
-        mem.at(rec->rec+VOTE_OFFS+1),
-        mem.at(rec->rec+VOTE_OFFS+2),
-        mem.at(rec->rec+VOTE_OFFS+3),
+        mem.at(rec->pos+VOTE_OFFS),
+        mem.at(rec->pos+VOTE_OFFS+1),
+        mem.at(rec->pos+VOTE_OFFS+2),
+        mem.at(rec->pos+VOTE_OFFS+3),
     };
     memcpy(&rating, &b_rating, sizeof(rating));
     memcpy(&votes, &b_votes, sizeof(votes));
@@ -116,7 +124,10 @@ bool Memory::rec_read(RecPtr *rec, Record *data) {
     data->avg_rating = rating;
 
     if(counting){
-
+        int blk = rec->pos/blk_size;
+        if(vis.count(blk)==0){
+            vis.insert(blk);
+        }
     }
     return true;
 }
@@ -127,10 +138,7 @@ void Memory::start_access_count() {
 
 int Memory::end_access_count() {
     counting = false;
-    int vis_cnt = 0;
-    for(map<long, bool>::iterator i=vis.begin(); i!=vis.end(); i++){
-        vis_cnt++;
-    }
+    int vis_cnt = vis.size();
     vis.clear();
     return vis_cnt;
 }

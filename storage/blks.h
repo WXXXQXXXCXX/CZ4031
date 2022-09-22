@@ -1,6 +1,7 @@
 #ifndef MEM_H
 #define MEM_H
 
+#include <set>
 #include <map>
 #include <vector>
 #define REC_LENGTH 18
@@ -15,8 +16,7 @@ const uint RATING_OFFS = 10;
 const uint VOTE_OFFS = 14;
 
 struct RecPtr {
-    long rec;
-    long blk;
+    int pos;
 };
 
 struct Record {
@@ -47,7 +47,7 @@ private:
     /**
      * record whether a block is visited during an insert/delete/search
     */
-    map<long, bool> vis;
+    set<int> vis;
     /**
      * number of blocks occupied
     */
