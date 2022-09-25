@@ -35,15 +35,16 @@ uint Memory::get_num_blks(){
 
 uint Memory::get_mem_used(){
     map<long, int>::iterator itr;
-    int i = 0;
-    cout<<"=========memory use per block========="<<"\n";
-    for(itr = blocks.begin(); itr != blocks.end(); itr ++){
-        cout<<"blk no."<< i <<": "<<itr->second << "\n";
-        i++;
-    }
+//    int i = 0;
+//    cout<<"=========memory use per block========="<<"\n";
+//    for(itr = blocks.begin(); itr != blocks.end(); itr ++){
+//        cout<<"blk no."<< i <<": "<<itr->second << "\n";
+//        i++;
+//    }
     cout<<"=========memory use in total========="<<"\n";
     cout<<"total occupied bytes: "<<num_rec*REC_LENGTH<<"\n";
-    cout<<"memory occupied by all blocks: "<<blk_size*num_blks_used;
+    cout<<"memory occupied by all blocks: "<<blk_size*num_blks_used<<"\n";
+    cout<<"number of records inserted: "<<num_rec;
     return blk_size*num_blks_used;
 }
 

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void test_insert(){
+BPTree * test_insert(){
     BPTree tree = BPTree();
     vector<int> myvector;
 
@@ -16,13 +16,14 @@ void test_insert(){
     auto rng = default_random_engine {};
     shuffle(begin(myvector), end(myvector), rng);
     int v[] = {2,7,1,4,3,6,5,10,9,8};
-    for(int i=0; i<10; i++) cout<<myvector.at(i)<<" ";
+    //for(int i=0; i<10; i++) cout<<myvector.at(i)<<" ";
     cout<<"\n";
     for(int i=0; i<10; i++){
         tree.insert(RecPtr{.pos=1}, v[i]);
     }
-    //tree.printTree();
-    tree.del(9);
+    tree.printTree();
+    return &tree;
+    //tree.del(9);
 
 }
 
@@ -44,20 +45,26 @@ vector<int> test_read_file(int n) {
     return vals;
 }
 
-void read_and_insert_all(){
-    BPTree tree = BPTree();
+void read_and_insert_all(BPTree *tree){
+
     ifstream f("../data.tsv");
     string line;
     getline(f, line);
+    int i=0;
     while(getline(f, line)){
         stringstream iss(line);
         string tconst; string a; string b;
         getline(iss, tconst, '\t');
         getline(iss, a, '\t');
         getline(iss, b, '\t');
-        tree.insert(RecPtr{.pos=1}, atoi(b.c_str()));
+        int votes = atoi(b.c_str());
+        if(votes<=4000 && votes>=3000){
+            i++;
+        }
+        tree->insert(RecPtr{.pos=1}, votes);
     }
-    tree.printTree();
+    //tree.printTree();
+    cout<<i<<"\n";
 }
 void test_read_and_insert(int n){
     BPTree tree = BPTree();
@@ -103,15 +110,32 @@ void test_find(){
     tree.findRange(1,5);
 }
 
+void test_delete(){
+    BPTree tree = BPTree();
+    int v[] = {1,2,4,5,3,7,8,6};
+    for(int i=0; i<8; i++){
+        RecPtr *p = new RecPtr;
+        p->pos=1;
+        tree.insert(*p, v[i]);
+    }
+    //tree.printTree();
+    //tree.del(6);
+    tree.del(3);
+    tree.del(8);
+    tree.printTree();
+}
 
 int main(){
-    //test_insert();
-    //1645 198 1342 120 2127 115 652 1807 154 6018
-    //57, insert 16
-    //test_read_and_insert(4000000);
-    //read_and_insert_all();
-    test_find();
-    //test_redistribute();
-    //for(int i=0; i<10; i++) cout<<ans.at(i)<<" ";
+//    test_insert();
+//    test_delete();
+//    test_read_and_insert(4000000);
+    BPTree tree = BPTree();
+    read_and_insert_all(&tree);
+//    list<int> ans = tree.findRange(3000, 4000);
+//    cout<<"\nnode count: "<<tree.getCountNode()<<"\n";
+//    cout<<"height: "<<tree.getHeight()<<"\n";
+//    cout<<"number of records: "<<ans.size()<<"\n";
+    tree.del(1000);
+    cout<<"\nnode count: "<<tree.getCountNode()<<"\n";
     return 0;
 }

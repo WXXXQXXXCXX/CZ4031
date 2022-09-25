@@ -5,6 +5,7 @@ using namespace std;
 
 int findSlotInNode(Node *node, int key) {
     int idx = 0;
+
     while (idx < node->num_keys && key > node->key[idx]) {
         idx++;
     }
@@ -27,12 +28,15 @@ int findChildForKey(Node *node, int key){
 }
 
 list<int> BPTree::find(int key) {
+    count_node = 0;
     int depth = height;
     Node * cur = root;
     while(depth--!=0){
+        count_node ++;
         int idx = findChildForKey(cur, key);
         cur = reinterpret_cast<Node *> (cur->ptr[idx]);
     }
+    count_node ++;
     int idx = findSlotInNode(cur, key);
     list<int> ans;
     if(key == cur->key[idx]){
@@ -47,25 +51,29 @@ list<int> BPTree::find(int key) {
 }
 
 list<int> BPTree::findRange(int low, int high) {
+    count_node = 0;
     int depth = height;
     Node * cur = root;
     while(depth--!=0){
+        count_node ++;
         int idx = findSlotInNode(cur, low);
         cur = reinterpret_cast<Node *> (cur->ptr[idx]);
     }
+    count_node ++;
     int idx = findSlotInNode(cur, low);
     assert(cur->key[idx]>=low);
     int cur_idx = idx;
     Node * cur_node = cur;
     list<int> ans;
     while(cur_node && cur_node->key[cur_idx]<=high){
-        list<int> *cur_data = reinterpret_cast<list<int>*>(cur->ptr[idx]);
+        list<int> *cur_data = reinterpret_cast<list<int>*>(cur_node->ptr[cur_idx]);
         cout<<"found record: "<<cur_data->size()<<", ele = "<<cur_node->key[cur_idx]<<"\n";
         for(int pos: *cur_data){
             ans.push_back(pos);
             cout<<pos<<"\t";
         }
         if(cur_idx == cur_node->num_keys-1){
+            count_node++;
             cur_node = reinterpret_cast<Node*> (cur_node->ptr[MAX]);
             cur_idx = 0;
         } else {

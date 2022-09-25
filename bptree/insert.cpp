@@ -12,11 +12,10 @@ BPTree::BPTree() {
 }
 
 void BPTree::insert(RecPtr rec, int key) {
-    if(key==15){
-        int i;
-    }
+    count_node =0;
+
     InsertResult res;
-    bool split;
+    bool split = false;
     if(height == 0) {
         split = insertInLeaf(root, key, &res, rec);
     } else {
@@ -34,7 +33,8 @@ void BPTree::insert(RecPtr rec, int key) {
     }
 }
 
-bool insertInLeaf(Node *cur, int key,InsertResult* res, RecPtr rec_ptr){
+bool BPTree::insertInLeaf(Node *cur, int key,InsertResult* res, RecPtr rec_ptr){
+    count_node++;
     bool split = false;
     int pos = findSlotInNode(cur, key);
     if(key == cur->key[pos]){
@@ -78,8 +78,8 @@ bool insertInLeaf(Node *cur, int key,InsertResult* res, RecPtr rec_ptr){
     return split;
 }
 
-bool insertInInner(Node *cur, int key,InsertResult* res, int depth, RecPtr rec_ptr){
-
+bool BPTree::insertInInner(Node *cur, int key,InsertResult* res, int depth, RecPtr rec_ptr){
+    count_node++;
     bool split = false;
     int pos = findChildForKey(cur, key);
     InsertResult child_res;
@@ -172,33 +172,4 @@ void insertToInnerNoSplit(Node* cur, int key, int pos, Node *newNode){
         cur->ptr[pos+1] = newNode;
         cur->num_keys++;
     }
-}
-
-void redistribute(Node *cur, Node *newNode, int insert_pos, int key, void *ptr, InsertResult *res){
-    int r = ceil((MAX) / 2.0);
-    int l = MAX-r;
-    vector<void *>temp_ptr;
-    vector<int> temp_key;
-
-    for(int i=0; i<MAX; i++){
-        temp_ptr.push_back(cur->ptr[i]);
-        temp_key.push_back(cur->key[i]);
-    }
-    temp_ptr.push_back(cur->ptr[MAX]);
-    temp_ptr.insert(temp_ptr.begin()+insert_pos+1, ptr);
-    temp_key.insert(temp_key.begin()+insert_pos, key);
-    newNode->num_keys = l;
-    cur->num_keys = r;
-    for (int i = 0; i < r; i++) {
-        cur->key[i] = temp_key.at(i);
-        cur->ptr[i] = temp_ptr.at(i);
-    }
-    cur->ptr[cur->num_keys] = temp_ptr.at(cur->num_keys);
-    for (int i = 0; i < l; i++) {
-        newNode->key[i] = temp_key.at(i + r + 1);
-        newNode->ptr[i] = temp_ptr.at(i + r + 1);
-    }
-    newNode->ptr[newNode->num_keys] = temp_ptr.at(MAX + 1);
-    res->move_up = temp_key.at(r);
-    res->newNode = newNode;
 }

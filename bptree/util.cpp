@@ -55,8 +55,9 @@ void BPTree::printTree() {
     queue<Node> q;
     q.push(*root);
     int level = 0;
+    int num_nodes = 0;
     while(level<=height){
-
+        num_nodes += q.size();
         queue<Node> newQ;
         cout<<"level"<<level<<"\t\n";
         int i=0;
@@ -82,6 +83,8 @@ void BPTree::printTree() {
         level++;
         q = newQ;
     }
+    cout<<"number of nodes: "<<num_nodes<<"\n";
+    cout<<"height: "<<height<<"\n";
 
 }
 
@@ -90,11 +93,12 @@ bool nodeHasMinKey(Node *node){
         return false;
     }
     if(node->is_leaf){
-        return node->num_keys==floor((MAX+1)/2.0);
+        return node->num_keys <= floor((MAX+1)/2.0);
     } else {
-        return node->num_keys == floor((MAX)/2.0);
+        return node->num_keys <= floor((MAX)/2.0);
     }
 }
+
 
 Node * getLastNode(Node *node){
     return reinterpret_cast<Node *>(node->ptr[node->num_keys]);
@@ -106,4 +110,12 @@ Node * getFirstNode(Node *node){
 
 Node * getNextNode(Node *node){
     return reinterpret_cast<Node *>(node->ptr[MAX]);
+}
+
+int BPTree::getCountNode() {
+    return count_node;
+}
+
+int BPTree::getHeight() {
+    return height;
 }

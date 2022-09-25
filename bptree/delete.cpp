@@ -1,39 +1,44 @@
 #include "bptree.h"
 
 void BPTree::del(int key) {
-    Node *newNode = deleteAndBalance(key,root,NULL,NULL,NULL,NULL,NULL);
-    if(newNode!=NULL){
+    count_node = 0;
+    int alt_idx = -1;
+    bool del_after_child = false;
+    Node *newNode = deleteAndBalance(key,&alt_idx,&del_after_child,root,nullptr,nullptr,nullptr,nullptr,nullptr);
+    if(newNode!=nullptr && root->num_keys == 0){
         collapseRoot(root, newNode);
     }
 }
 
-Node* BPTree::deleteAndBalance(int key, Node *cur, Node *left, Node *right, Node *l_parent, Node *r_parent, Node * cur_parent){
-    // node to do delete
+Node* BPTree::deleteAndBalance(
+        int key, int *alt_idx, bool * need_remove,
+        Node *cur, Node *left, Node *right,
+        Node *l_parent, Node *r_parent, Node * cur_parent){
+    // current node, may or may not need to delete a key
     Node* newCur;
-    Node* l;
-    Node* r;
-    Node* lp;
-    Node* rp;
-    Node* p;
-    bool r_min;
-    bool l_min;
-    bool no_l;
-    bool no_r;
-    int pos;
+    count_node ++;
     bool may_need_balance = false;
-    if(nodeHasMinKey(cur)){
-        may_need_balance = true;
+    int alt_after_child = -1;
+    bool del_after_child = false;
+
+    int idx;
+    if(cur->is_leaf){
+        idx = findSlotInNode(cur, key);
+    } else{
+        idx = findChildForKey(cur, key);
     }
 
-    int idx = findSlotInNode(cur, key);
     Node *newNode = reinterpret_cast<Node *>(cur->ptr[idx]);
 
     // if not the leaf, call delete and balance on child
     if(!cur->is_leaf){
-
+        Node* l;
+        Node* r;
+        Node* lp;
+        Node* rp;
         //if target child is first one, immediate left should be the last child in current left
         if(idx == 0){
-            l = left == NULL?NULL: getLastNode(left);
+            l = left == nullptr ? nullptr : getLastNode(left);
             lp = l_parent;
         } else {
             l = reinterpret_cast<Node *>(cur->ptr[idx-1]);
@@ -42,88 +47,149 @@ Node* BPTree::deleteAndBalance(int key, Node *cur, Node *left, Node *right, Node
 
         //similar for the last child
         if(idx == cur->num_keys){
-            r = right == NULL? NULL: getFirstNode(left);
+            r = right == nullptr ? nullptr: getFirstNode(left);
             rp = r_parent;
         } else {
             r = reinterpret_cast<Node *>(cur->ptr[idx+1]);
             rp = cur;
         }
-        newCur = deleteAndBalance(key, newNode, l, r, lp, rp, cur);
+        newCur = deleteAndBalance(key, &alt_after_child, &del_after_child, newNode, l, r, lp, rp, cur);
     } else if(idx<cur->num_keys && cur->key[idx]==key){
         //is leaf and found target
         newCur = newNode;
+        if(nodeHasMinKey(cur)){
+            may_need_balance = true;
+        }
     } else {
-        newCur = NULL;
+        newCur = nullptr;
+        *need_remove = false;
         may_need_balance = false;
     }
 
-    if(newCur !=  NULL) {
+    if(cur->is_leaf){
+        if(nodeHasMinKey(cur)){
+            may_need_balance = true;
+        }
+        removeKey(cur, idx);
+        *alt_idx = cur->key[0];
+
+    } else if(newCur !=  nullptr) {
         // merge return the right node, if merge with left,
-        if(newCur == newNode){
+        if(newCur == newNode && del_after_child){
+            if(nodeHasMinKey(cur)){
+                may_need_balance = true;
+            }
+            removeKey(cur, idx - 1);
+        } else if(newCur == newNode && del_after_child) {
             removeKey(cur, idx);
-        } else {
-            removeKey(cur, idx+1);
         }
     }
 
+    if(alt_after_child!=-1){
+        int i = findSlotInNode(cur, key);
+        if(cur->key[i]==key){
+            cur->key[i] = alt_after_child;
+            *alt_idx = -1;
+        } else{
+            *alt_idx = alt_after_child;
+        }
+    }
+
+//    if(nodeHasMinKey(cur) && root !=cur){
+//        may_need_balance = true;
+//    }
+
+    bool r_min;
+    bool l_min;
+    bool no_l;
+    bool no_r;
     if(may_need_balance){
-        no_l = left == NULL;
-        no_r = right == NULL;
-        l_min = nodeHasMinKey(l);
-        r_min = nodeHasMinKey(r);
+        no_l = left == nullptr;
+        no_r = right == nullptr;
+        l_min = nodeHasMinKey(left);
+        r_min = nodeHasMinKey(right);
 
         //1. if node is root:
         if(no_l && no_r){
             if(cur->is_leaf){
-                newNode = NULL;
+                newNode = nullptr;
             } else {
                 newNode = getFirstNode(cur);
             }
         }
         //2. when borrow from both sides are not possible, then must merge
-        else if((no_l||l_min) && (no_l||r_min)){
+        else if((no_l||l_min) && (no_r||r_min)){
             if(l_parent != cur_parent){
                 newNode = mergeNode(cur, right, r_parent);
             } else {
                 newNode = mergeNode(left, cur, l_parent);
             }
+            *need_remove = true;
         }
 
         //3. can merge with left or borrow from right
         else if(!no_l && l_min && !no_r && !r_min) {
             if(r_parent != cur_parent){
                 newNode =mergeNode(left, cur, l_parent);
+                *need_remove = true;
             } else {
-                newNode =mergeNode(cur, right, r_parent);
+                newNode =shift(cur, right, r_parent);
+                *need_remove = false;
+                *alt_idx = right->key[0];
             }
         }
         //4. can merge with right or borrow from left
         else if(!no_l && !l_min && !no_r && r_min) {
             if(l_parent != cur_parent) {
                 newNode =mergeNode(cur, right, r_parent);
+                *need_remove = true;
             } else {
-                newNode =mergeNode(left, cur, l_parent);
+                newNode =shift(left, cur, l_parent);
+                *need_remove = false;
+                *alt_idx = cur->key[0];
             }
         }
-        //5. can merge with both left and right
+        //5. can shift from both left and right
         else if(l_parent == r_parent){
-            if(l->num_keys<=r->num_keys){
-                newNode =shift(cur, r, r_parent);
+            if(left->num_keys<=right->num_keys){
+                newNode =shift(cur, right, r_parent);
+                *need_remove = false;
+                *alt_idx = right->key[0];
             } else {
-                newNode =shift(l, cur, l_parent);
+                newNode =shift(left, cur, l_parent);
+                *need_remove = false;
+                *alt_idx = cur->key[0];
+            }
+
+        }
+
+        else {
+            if(l_parent == cur_parent){
+                newNode = shift(left, cur, l_parent);
+                *need_remove = false;
+                *alt_idx = cur->key[0];
+            } else {
+                newNode = shift(cur, right, r_parent);
+                *need_remove = false;
+                *alt_idx = right->key[0];
             }
         }
+    } else {
+        newNode = nullptr;
     }
+
     return newNode;
 }
 
 void BPTree::removeKey(Node *node, int idx){
     node -> key[idx] = NULL;
+    bool is_internal = !node->is_leaf;
     for(int i=idx; i<node->num_keys; i++){
-        node -> key[idx] = node -> key[idx+1];
-        node -> ptr[idx] = node -> ptr[idx+1];
-        node -> num_keys --;
+        node -> key[i] = node -> key[i+1];
+        node -> ptr[i+(is_internal)] = node -> ptr[i+1+(is_internal)];
+
     }
+    node -> num_keys --;
 }
 
 Node *BPTree::shift(Node *left, Node *right, Node *parent) {
@@ -135,13 +201,10 @@ Node *BPTree::shift(Node *left, Node *right, Node *parent) {
     if(left->num_keys<=right->num_keys){
         num_shifts = (right->num_keys - left->num_keys) >> 1;
         int new_left_key_num = left->num_keys + num_shifts;
-        new_anchor = right->key[num_shifts+1];
-        if(is_leaf){
-            new_anchor = right->key[num_shifts+1];
-        } else {
-            new_anchor = right->key[num_shifts];
-        }
-        anchor_slot = findSlotInNode(parent, new_anchor);
+        new_anchor = right->key[num_shifts+(!right->is_leaf)];
+
+        anchor_slot = findSlotInNode(parent, new_anchor) - 1;
+
         if(!is_leaf){
             left->num_keys ++;
             right->num_keys --;
@@ -151,40 +214,39 @@ Node *BPTree::shift(Node *left, Node *right, Node *parent) {
         }
         parent->key[anchor_slot] = new_anchor;
         int num_to_left = num_shifts;
-        if(!is_leaf){
-            num_shifts --;
-        }
-        for(int i=num_to_left; num_shifts>0; num_shifts--, i--) {
+
+        for(int i=new_left_key_num-1; num_shifts>0; num_shifts--, i--) {
             left->num_keys++;
             right->num_keys--;
-            left->key[i] = right->key[num_shifts];
-            left->ptr[i] = right->ptr[num_shifts];
+            left->key[i] = right->key[num_shifts-1];
+            left->ptr[i] = right->ptr[num_shifts-1];
         }
 
-        for(int i=1; i<=right->num_keys; i++){
-            right->key[i] = right->key[i+num_shifts];
-            right->ptr[i] = right->ptr[i+num_shifts];
+        for(int i=0; i<right->num_keys - (!right->is_leaf); i++){
+            right->key[i] = right->key[i+num_to_left+(!left->is_leaf)];
+            right->ptr[i] = right->ptr[i+num_to_left+(!left->is_leaf)];
         }
     } else {
         // shift from left to right
         num_shifts = (left->num_keys - right->num_keys) >> 1;
-        int new_left_key_num = left->num_keys - num_shifts + 1;
-        for(int i=right->num_keys; i>0; i--){
+        int new_left_key_num = left->num_keys - num_shifts;
+        for(int i=right->num_keys-1; i>=0; i--){
             right->key[i+num_shifts] = right->key[i];
             right->ptr[i+num_shifts] = right->ptr[i];
         }
-        new_anchor = parent->key[new_left_key_num];
-        anchor_slot = findSlotInNode(parent, new_anchor) + 1;
+        new_anchor = left->key[new_left_key_num];
+        anchor_slot = findSlotInNode(parent, new_anchor) ;
         if(!is_leaf) {
             left->num_keys -= 1;
             right->num_keys += 1;
             right->key[num_shifts] = parent->key[anchor_slot];
             right->ptr[num_shifts] = getFirstNode(right);
         }
-        int L = is_leaf?left->num_keys:left->num_keys+1;
-        int R = is_leaf?num_shifts:num_shifts+1;
+        parent->key[anchor_slot] = new_anchor;
+        int L = is_leaf?left->num_keys-1:left->num_keys;
+        int R = is_leaf?num_shifts-1:num_shifts;
 
-        for(; R>0; L--, R--){
+        for(; R>=0; L--, R--){
             left->num_keys--;
             right->num_keys++;
             right->key[R] = left->key[L];

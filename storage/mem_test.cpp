@@ -1,9 +1,32 @@
 #include "blks.h"
+#include <sstream>
 #include <iostream>
 #include <vector>
+#include <cstring>
+#include "fstream"
 
 using namespace std;
 
+void test_alloc_fil(){
+    Memory mem = Memory(100000000,200);
+    ifstream f("../data.tsv");
+    string line;
+    getline(f, line);
+    while(getline(f, line)){
+
+        stringstream iss(line);
+        string tconst; string a; string b;
+        getline(iss, tconst, '\t');
+        getline(iss, a, '\t');
+        getline(iss, b, '\t');
+        Record rec = {.tconst="", .avg_rating = static_cast<float>(atof(a.c_str())), .num_votes = static_cast<uint>(atoi(b.c_str()))};
+        strcpy(rec.tconst, tconst.c_str());
+        RecPtr ptr;
+        mem.rec_insert(&ptr, rec);
+    }
+    mem.get_mem_used();
+    mem.get_num_blks();
+}
 void test_alloc(){
     Memory mem = Memory(100000000,200);
     vector<RecPtr> ptrs;
@@ -15,6 +38,8 @@ void test_alloc(){
         mem.rec_insert(&ptr, rec);
         ptrs.push_back(ptr);
     }
+
+
 
     mem.rec_delete(&ptrs.at(2));
     ptrs.erase(ptrs.begin() + 2);
@@ -44,8 +69,9 @@ void test_alloc(){
      mem.get_num_blks();
 
 }
-//
+
 //int main(){
 //    test_alloc();
+//    test_alloc_fil();
 //    return 0;
 //}
