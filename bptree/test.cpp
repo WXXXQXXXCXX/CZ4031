@@ -125,17 +125,17 @@ void test_delete(){
     tree.printTree();
 }
 
-int main(){
+//int main(){
 //    test_insert();
 //    test_delete();
 //    test_read_and_insert(4000000);
-    BPTree tree = BPTree();
-    read_and_insert_all(&tree);
+//    BPTree tree = BPTree();
+//    read_and_insert_all(&tree);
 //    list<int> ans = tree.findRange(3000, 4000);
 //    cout<<"\nnode count: "<<tree.getCountNode()<<"\n";
 //    cout<<"height: "<<tree.getHeight()<<"\n";
 //    cout<<"number of records: "<<ans.size()<<"\n";
-    tree.del(1000);
-    cout<<"\nnode count: "<<tree.getCountNode()<<"\n";
-    return 0;
-}
+//    tree.del(1000);
+//    cout<<"\nnode count: "<<tree.getCountNode()<<"\n";
+//    return 0;
+//}

@@ -4,9 +4,10 @@
 #include "blks.h"
 #include <list>
 
-//8 bit pointer, 4 bit key, 8*(n+1)+4*sizeof(int) = block_size;
+//8 bit pointer, 4 bit key, 8*(n+1)+sizeof(int)*n = block_size;
 //block_size=200, MAX = 16
-const int MAX = 16;
+//block_size=500, MAX = 41
+const int MAX = 41;
 
 
 struct Node {
@@ -28,13 +29,15 @@ class BPTree {
     int height;
     int count_node;
     void removeKey(Node *node, int idx);
-    Node* deleteAndBalance(int key, int *alt_idx, bool *need_remove,
+    Node* deleteAndBalance(int key, int *alt_idx, bool *need_remove, list<int>* ans,
                            Node *cur, Node *left, Node *right,
                            Node *l_parent, Node *r_parent, Node * cur_parent);
     Node *shift(Node *left, Node *right, Node *parent);
     void collapseRoot(Node *prev, Node *cur);
     bool insertInLeaf(Node *cur, int key,InsertResult* res, RecPtr rec_ptr);
     bool insertInInner(Node *cur, int key,InsertResult* res, int depth, RecPtr ptr);
+    void printInnerNode(Node *node);
+    void printLeafNode(Node *node);
 
 public:
     BPTree();
@@ -42,11 +45,12 @@ public:
     list<int> find(int);
     list<int> findRange(int, int);
 
-    void del(int);
+    list<int> del(int);
     Node* getRoot();
     void printTree();
     int getHeight();
     int getCountNode();
+    int getTreeInfo();
 
 };
 

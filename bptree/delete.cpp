@@ -1,17 +1,19 @@
 #include "bptree.h"
 
-void BPTree::del(int key) {
-    count_node = 0;
+list<int> BPTree::del(int key) {
     int alt_idx = -1;
     bool del_after_child = false;
-    Node *newNode = deleteAndBalance(key,&alt_idx,&del_after_child,root,nullptr,nullptr,nullptr,nullptr,nullptr);
+    list<int> ans;
+    count_node = 0;
+    Node *newNode = deleteAndBalance(key,&alt_idx,&del_after_child,&ans,root,nullptr,nullptr,nullptr,nullptr,nullptr);
     if(newNode!=nullptr && root->num_keys == 0){
         collapseRoot(root, newNode);
     }
+    return ans;
 }
 
 Node* BPTree::deleteAndBalance(
-        int key, int *alt_idx, bool * need_remove,
+        int key, int *alt_idx, bool * need_remove,list<int>* ans,
         Node *cur, Node *left, Node *right,
         Node *l_parent, Node *r_parent, Node * cur_parent){
     // current node, may or may not need to delete a key
@@ -53,7 +55,7 @@ Node* BPTree::deleteAndBalance(
             r = reinterpret_cast<Node *>(cur->ptr[idx+1]);
             rp = cur;
         }
-        newCur = deleteAndBalance(key, &alt_after_child, &del_after_child, newNode, l, r, lp, rp, cur);
+        newCur = deleteAndBalance(key, &alt_after_child, &del_after_child, ans, newNode, l, r, lp, rp, cur);
     } else if(idx<cur->num_keys && cur->key[idx]==key){
         //is leaf and found target
         newCur = newNode;
@@ -70,8 +72,13 @@ Node* BPTree::deleteAndBalance(
         if(nodeHasMinKey(cur)){
             may_need_balance = true;
         }
+        list<int> *l = reinterpret_cast<list<int>*>(cur->ptr[idx]);
+        for(int pos: *l){
+            ans->push_back(pos);
+        }
         removeKey(cur, idx);
         *alt_idx = cur->key[0];
+
 
     } else if(newCur !=  nullptr) {
         // merge return the right node, if merge with left,

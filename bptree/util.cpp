@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void printInnerNode(Node *node){
+void BPTree::printInnerNode(Node *node){
     for(int i=0; i<MAX; i++){
         int n;
         if(node->ptr[i] && i<=node->num_keys){
@@ -28,7 +28,7 @@ void printInnerNode(Node *node){
     cout<< "[" << n << "]";
 
 }
-void printLeafNode(Node *node){
+void BPTree::printLeafNode(Node *node){
     for(int i=0; i<MAX; i++){
         int s=-1;
         if(node->ptr[i] && i<=node->num_keys){
@@ -49,6 +49,37 @@ void printLeafNode(Node *node){
         s = n->key[0];
     }
     cout<< "[next->" << s << "]";
+}
+
+int BPTree::getTreeInfo() {
+    queue<Node> q;
+    q.push(*root);
+    int level = 0;
+    int num_nodes = 0;
+    while(level<=height){
+        num_nodes += q.size();
+        queue<Node> newQ;
+        int i=0;
+        while (!q.empty()){
+            i++;
+            Node n = q.front();
+            q.pop();
+            for(int i=0; i<=n.num_keys; i++){
+                if(n.ptr[i]!= NULL){
+                    newQ.push(*reinterpret_cast<Node*>(n.ptr[i]));
+                }
+            }
+        }
+        level++;
+        q = newQ;
+    }
+    cout<<"number of nodes: "<<num_nodes<<"\n";
+    cout<<"height: "<<height+1<<"\n";
+    cout<<"root:\n";
+    printInnerNode(root);
+    cout<<"\nfirst child node of root:\n";
+    printInnerNode(getFirstNode(root));
+    cout<<"\n";
 }
 
 void BPTree::printTree() {

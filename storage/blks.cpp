@@ -35,15 +35,11 @@ uint Memory::get_num_blks(){
 
 uint Memory::get_mem_used(){
     map<long, int>::iterator itr;
-//    int i = 0;
-//    cout<<"=========memory use per block========="<<"\n";
-//    for(itr = blocks.begin(); itr != blocks.end(); itr ++){
-//        cout<<"blk no."<< i <<": "<<itr->second << "\n";
-//        i++;
-//    }
+
     cout<<"=========memory use in total========="<<"\n";
+    cout<<"number of blocks: "<<num_blks_used<<"\n";
     cout<<"total occupied bytes: "<<num_rec*REC_LENGTH<<"\n";
-    cout<<"memory occupied by all blocks: "<<blk_size*num_blks_used<<"\n";
+    cout<<"memory occupied by all blocks: "<<blk_size*num_blks_used<<"bytes = "<<blk_size*num_blks_used*1.0e-6<<"MB\n";
     cout<<"number of records inserted: "<<num_rec;
     return blk_size*num_blks_used;
 }
@@ -140,6 +136,19 @@ void Memory::start_access_count() {
 int Memory::end_access_count() {
     counting = false;
     int vis_cnt = vis.size();
+    for(int pos: vis){
+        int blk_start = pos*blk_size;
+        cout<<"==========Block content"<<"("<<pos<<")"<<"=========="<<"\n";
+        for(int i=0; i+REC_LENGTH<blk_size; i+=REC_LENGTH){
+            Record rec;
+            rec_read(new RecPtr{.pos=i+blk_start},&rec);
+            if(rec.avg_rating==0 && rec.num_votes==0){
+                cout<<"Record offset: "<<i<<": empty"<<"\n";
+            }else {
+                cout<<"Record offset: "<<i<<": "<<rec.tconst<<", "<<rec.avg_rating<<", "<<rec.num_votes<<"\n";
+            }
+        }
+    }
     vis.clear();
     return vis_cnt;
 }

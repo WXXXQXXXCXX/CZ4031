@@ -55,6 +55,9 @@ list<int> BPTree::findRange(int low, int high) {
     int depth = height;
     Node * cur = root;
     while(depth--!=0){
+        if(!cur->is_leaf) printInnerNode(cur);
+        else printLeafNode(cur);
+        cout<<"\n\n";
         count_node ++;
         int idx = findSlotInNode(cur, low);
         cur = reinterpret_cast<Node *> (cur->ptr[idx]);
@@ -67,14 +70,16 @@ list<int> BPTree::findRange(int low, int high) {
     list<int> ans;
     while(cur_node && cur_node->key[cur_idx]<=high){
         list<int> *cur_data = reinterpret_cast<list<int>*>(cur_node->ptr[cur_idx]);
-        cout<<"found record: "<<cur_data->size()<<", ele = "<<cur_node->key[cur_idx]<<"\n";
+        //cout<<"found record: "<<cur_data->size()<<", ele = "<<cur_node->key[cur_idx];
         for(int pos: *cur_data){
             ans.push_back(pos);
-            cout<<pos<<"\t";
+            //cout<<"\t"<<pos<<"\n";
         }
         if(cur_idx == cur_node->num_keys-1){
             count_node++;
             cur_node = reinterpret_cast<Node*> (cur_node->ptr[MAX]);
+            printLeafNode(cur_node);
+            cout<<"\n\n";
             cur_idx = 0;
         } else {
             cur_idx ++;
