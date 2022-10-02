@@ -26,21 +26,32 @@ void range(int low, int high, BPTree *tree, Memory *mem){
 }
 
 void find(int num, BPTree *tree, Memory *mem){
-
+    cout << "==========EXPERIMENT 3==========" << endl;
+    cout << "Retrieve the record with numVotes = " << num << endl;
     list<int> ans = tree->find(num);
+    cout << endl;
+
+    cout << "Number of nodes accessed: " << tree->getCountNode() << endl;
+    cout << "Number of records found: " << ans.size() << endl;
+
+    cout << "==========Record Values==========" << endl;
     mem->start_access_count();
-    double avg_rating = 0;
-    for (int pos:ans){
+    double averageRatings = 0.0;
+
+    for (int idx: ans) {
         Record rec = Record();
-        mem->rec_read(new RecPtr{.pos=pos}, &rec);
-        avg_rating += rec.avg_rating;
+        mem->rec_read(new RecPtr{.pos=idx}, &rec);
+        averageRatings += rec.avg_rating;
 
     }
-    cout<<"==========Block access info==========\n";
-    int cnt = mem->end_access_count();
-    cout<<"total blocks accessed: "<< cnt<<"\n";
-    cout<<"mean of averageRating: "<<avg_rating/ans.size()<<"\n";
-    cout<<"number of nodes accessed: "<<tree->getCountNode()<<"\n";
+
+    cout << "==========Block Access Information==========" << endl;
+    int accessCount = mem->end_access_count();
+    cout<<"Number of blocks accessed: "<< accessCount << endl;
+
+    cout << "==========Average Rating of Records==========" << endl;
+    averageRatings /= ans.size();
+    cout<<"Average Rating: "<< averageRatings << endl;
 }
 
 void del(int num, BPTree *tree, Memory *mem){
@@ -48,7 +59,7 @@ void del(int num, BPTree *tree, Memory *mem){
     for (int pos:ans){
         Record rec = Record();
         mem->rec_delete(new RecPtr{.pos=pos});
-
+        cout<<rec.tconst<<", "<<rec.avg_rating<<", "<<rec.num_votes<<"\n";
     }
     cout<<"number of records found: "<<ans.size()<<"\n";
     cout<<"=========B+Tree parameters=========\n";
