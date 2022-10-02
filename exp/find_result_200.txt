@@ -1,0 +1,1457 @@
+/Users/xinweilau/Desktop/Y3S1/CZ4031/cmake-build-debug/CZ4031 200
+=========B+Tree parameters=========
+n = 16
+number of nodes: 1747
+height: 4
+root:
+[9]1342[8]2631[8]3897[13]5970[15]8878[10]12134[16]20151[8]30034[11]49802[15]125979[9]-[-1]-[-1]-[-1]-[-1]-[-1]-[-1]
+first child node of root:
+[8]106[14]267[15]448[10]573[13]726[10]837[10]960[12]1122[8]1224[9]-[-1]-[-1]-[-1]-[-1]-[-1]-[-1]-[-1]
+=========memory use in total=========
+number of blocks: 97302
+total occupied bytes: 19265724
+memory occupied by all blocks: 19460400bytes = 19.4604MB
+number of records inserted: 1070318
+==========EXPERIMENT 3==========
+Retrieve the record with numVotes = 500
+found record: 110
+
+Number of nodes accessed: 4
+Number of records found: 110
+==========Record Values==========
+tt0013674, 7, 500
+tt0024561, 6.8, 500
+tt0028277, 7.7, 500
+tt0041956, 6.5, 500
+tt0047361, 7.3, 500
+tt0047434, 6.3, 500
+tt0051500, 5.1, 500
+tt0052815, 6.7, 500
+tt0054298, 3.7, 500
+tt0062345, 4.7, 500
+tt0069064, 5.8, 500
+tt0070783, 5.1, 500
+tt0082275, 7.1, 500
+tt0082841, 5.1, 500
+tt0085198, 7, 500
+tt0090356, 3.8, 500
+tt0099259, 6, 500
+tt0100811, 5.3, 500
+tt0106600, 4.8, 500
+tt0119415, 4.6, 500
+tt0120462, 4.5, 500
+tt0149695, 4.3, 500
+tt0163456, 8.1, 500
+tt0184456, 5.7, 500
+tt0214362, 8.1, 500
+tt0218000, 6.3, 500
+tt0289115, 5.1, 500
+tt0303487, 5.9, 500
+tt0314564, 2.9, 500
+tt0327085, 5.5, 500
+tt0327546, 6.4, 500
+tt0398451, 6.5, 500
+tt0424365, 5.5, 500
+tt0450955, 3.9, 500
+tt0514442, 9.1, 500
+tt0517623, 8.1, 500
+tt0558715, 8.1, 500
+tt0582480, 8.3, 500
+tt0588114, 8.7, 500
+tt0588139, 8.1, 500
+tt0588187, 8.2, 500
+tt0588214, 8.6, 500
+tt0629708, 8.1, 500
+tt0640298, 8, 500
+tt0640308, 8.2, 500
+tt0647512, 7.2, 500
+tt0716912, 7.6, 500
+tt0720140, 7.1, 500
+tt0807689, 8.6, 500
+tt1169169, 6.4, 500
+tt1261908, 8.1, 500
+tt1340802, 6, 500
+tt1365490, 6.5, 500
+tt1371697, 7.9, 500
+tt1376451, 5.9, 500
+tt1421383, 7.6, 500
+tt1515736, 7.5, 500
+tt1535989, 6.4, 500
+tt1571100, 5.9, 500
+tt1592534, 6.6, 500
+tt1632756, 7.4, 500
+tt1640740, 7.7, 500
+tt1648683, 7.5, 500
+tt1684558, 5.3, 500
+tt1711021, 6.2, 500
+tt1727519, 4.1, 500
+tt1857596, 7.8, 500
+tt2040651, 7.8, 500
+tt2236257, 7.4, 500
+tt2247719, 7.7, 500
+tt2365211, 8.1, 500
+tt2662228, 6.6, 500
+tt2764038, 8.3, 500
+tt2813064, 5.6, 500
+tt3127434, 8.1, 500
+tt3203366, 8.2, 500
+tt3231390, 3.6, 500
+tt3263598, 7.3, 500
+tt3276280, 8.3, 500
+tt3398808, 5.5, 500
+tt3440780, 7.1, 500
+tt3592904, 2.3, 500
+tt3683072, 6, 500
+tt3916858, 7.8, 500
+tt4038966, 6.4, 500
+tt4247300, 7.9, 500
+tt4392820, 8, 500
+tt4493298, 7.9, 500
+tt4627488, 8, 500
+tt4680568, 4.6, 500
+tt4713652, 8.2, 500
+tt4897608, 7.7, 500
+tt6038946, 5.5, 500
+tt6054370, 5.6, 500
+tt6222376, 8, 500
+tt6232560, 5.2, 500
+tt6318954, 4.6, 500
+tt6985094, 7.1, 500
+tt7008310, 4.5, 500
+tt7431738, 7.2, 500
+tt7457714, 7.8, 500
+tt7517336, 8.1, 500
+tt7689514, 8.5, 500
+tt7860116, 8.4, 500
+tt8044824, 9.2, 500
+tt8960572, 6, 500
+tt9454484, 8.7, 500
+tt9614612, 7.7, 500
+tt9680914, 7.1, 500
+tt9895050, 9, 500
+==========Block Access Information==========
+==========Block content(326)==========
+Record offset: 0: tt0013624, 6.5, 21
+Record offset: 18: tt0013626, 6.7, 2031
+Record offset: 36: tt0013627, 5.2, 10
+Record offset: 54: tt0013629, 6.7, 25
+Record offset: 72: tt0013631, 6.6, 12
+Record offset: 90: tt0013658, 6.9, 31
+Record offset: 108: tt0013662, 6.9, 418
+Record offset: 126: tt0013668, 6.7, 22
+Record offset: 144: tt0013672, 6.7, 25
+Record offset: 162: tt0013674, 7, 500
+Record offset: 180: tt0013679, 6.9, 7
+==========Block content(819)==========
+Record offset: 0: tt0024549, 6, 361
+Record offset: 18: tt0024550, 6.4, 24
+Record offset: 36: tt0024551, 2.9, 9
+Record offset: 54: tt0024553, 5.9, 137
+Record offset: 72: tt0024554, 5.3, 822
+Record offset: 90: tt0024555, 5.5, 195
+Record offset: 108: tt0024558, 6.4, 11
+Record offset: 126: tt0024559, 6.1, 140
+Record offset: 144: tt0024560, 6.9, 397
+Record offset: 162: tt0024561, 6.8, 500
+Record offset: 180: tt0024562, 5.4, 10
+==========Block content(1075)==========
+Record offset: 0: tt0028276, 5.9, 30
+Record offset: 18: tt0028277, 7.7, 500
+Record offset: 36: tt0028278, 7.6, 5
+Record offset: 54: tt0028279, 6.5, 131
+Record offset: 72: tt0028280, 5.7, 35
+Record offset: 90: tt0028281, 6.4, 51
+Record offset: 108: tt0028282, 6.5, 278
+Record offset: 126: tt0028283, 5.2, 134
+Record offset: 144: tt0028284, 6.1, 105
+Record offset: 162: tt0028285, 6.2, 13
+Record offset: 180: tt0028286, 5.9, 187
+==========Block content(2070)==========
+Record offset: 0: tt0041946, 5.5, 39
+Record offset: 18: tt0041947, 6.1, 517
+Record offset: 36: tt0041948, 6.6, 902
+Record offset: 54: tt0041949, 6.3, 355
+Record offset: 72: tt0041951, 7.4, 53
+Record offset: 90: tt0041952, 7.6, 690
+Record offset: 108: tt0041953, 6.9, 469
+Record offset: 126: tt0041954, 7.3, 2435
+Record offset: 144: tt0041955, 6.7, 1119
+Record offset: 162: tt0041956, 6.5, 500
+Record offset: 180: tt0041957, 7.7, 10
+==========Block content(2471)==========
+Record offset: 0: tt0047356, 7, 10
+Record offset: 18: tt0047357, 6.4, 27
+Record offset: 36: tt0047358, 5.9, 224
+Record offset: 54: tt0047359, 6.7, 20
+Record offset: 72: tt0047360, 4.6, 12
+Record offset: 90: tt0047361, 7.3, 500
+Record offset: 108: tt0047362, 5.8, 5
+Record offset: 126: tt0047363, 6.7, 30
+Record offset: 144: tt0047364, 4.3, 11
+Record offset: 162: tt0047365, 6.2, 2363
+Record offset: 180: tt0047366, 6.4, 317
+==========Block content(2477)==========
+Record offset: 0: tt0047429, 5.7, 372
+Record offset: 18: tt0047431, 6, 33
+Record offset: 36: tt0047432, 6.7, 550
+Record offset: 54: tt0047434, 6.3, 500
+Record offset: 72: tt0047435, 6.8, 704
+Record offset: 90: tt0047436, 3.9, 11
+Record offset: 108: tt0047437, 7.7, 57708
+Record offset: 126: tt0047438, 7.1, 22
+Record offset: 144: tt0047439, 7.3, 7
+Record offset: 162: tt0047440, 5.7, 116
+Record offset: 180: tt0047442, 6.5, 37
+==========Block content(2787)==========
+Record offset: 0: tt0051486, 5.7, 43
+Record offset: 18: tt0051488, 5.3, 181
+Record offset: 36: tt0051489, 6.4, 398
+Record offset: 54: tt0051490, 6, 72
+Record offset: 72: tt0051492, 6.6, 161
+Record offset: 90: tt0051493, 6, 63
+Record offset: 108: tt0051496, 6.7, 2594
+Record offset: 126: tt0051497, 5.4, 164
+Record offset: 144: tt0051498, 7.2, 45
+Record offset: 162: tt0051499, 5.3, 15
+Record offset: 180: tt0051500, 5.1, 500
+==========Block content(2889)==========
+Record offset: 0: tt0052805, 5.5, 1192
+Record offset: 18: tt0052807, 6.6, 32
+Record offset: 36: tt0052808, 5.5, 155
+Record offset: 54: tt0052809, 7.2, 1667
+Record offset: 72: tt0052810, 6.9, 1102
+Record offset: 90: tt0052811, 7, 1539
+Record offset: 108: tt0052812, 6.4, 225
+Record offset: 126: tt0052813, 5, 20
+Record offset: 144: tt0052814, 5.1, 43
+Record offset: 162: tt0052815, 6.7, 500
+Record offset: 180: tt0052816, 7.1, 24
+==========Block content(3007)==========
+Record offset: 0: tt0054289, 4.9, 169
+Record offset: 18: tt0054290, 5, 139
+Record offset: 36: tt0054292, 7.4, 3883
+Record offset: 54: tt0054293, 7.8, 542
+Record offset: 72: tt0054294, 6.7, 49
+Record offset: 90: tt0054295, 6.5, 1199
+Record offset: 108: tt0054296, 7, 789
+Record offset: 126: tt0054297, 6.2, 50
+Record offset: 144: tt0054298, 3.7, 500
+Record offset: 162: tt0054299, 7.1, 38
+Record offset: 180: tt0054302, 7.1, 66
+==========Block content(3636)==========
+Record offset: 0: tt0062333, 7.9, 7
+Record offset: 18: tt0062334, 5.8, 164
+Record offset: 36: tt0062335, 6, 5
+Record offset: 54: tt0062336, 6.6, 43
+Record offset: 72: tt0062337, 7.5, 11
+Record offset: 90: tt0062338, 7.1, 100
+Record offset: 108: tt0062341, 5.6, 334
+Record offset: 126: tt0062342, 6.6, 28
+Record offset: 144: tt0062343, 5.2, 12
+Record offset: 162: tt0062345, 4.7, 500
+Record offset: 180: tt0062346, 5.8, 42
+==========Block content(4164)==========
+Record offset: 0: tt0069063, 8.1, 13
+Record offset: 18: tt0069064, 5.8, 500
+Record offset: 36: tt0069065, 5.8, 22
+Record offset: 54: tt0069067, 7.1, 707
+Record offset: 72: tt0069068, 7.5, 390
+Record offset: 90: tt0069070, 6.6, 5
+Record offset: 108: tt0069072, 6.4, 426
+Record offset: 126: tt0069073, 6.5, 2232
+Record offset: 144: tt0069074, 5.8, 40
+Record offset: 162: tt0069075, 6.2, 13
+Record offset: 180: tt0069076, 7.2, 16
+==========Block content(4298)==========
+Record offset: 0: tt0070777, 6.6, 47
+Record offset: 18: tt0070778, 5.4, 182
+Record offset: 36: tt0070779, 3.7, 207
+Record offset: 54: tt0070780, 7.5, 22
+Record offset: 72: tt0070781, 4.6, 53
+Record offset: 90: tt0070782, 5.2, 758
+Record offset: 108: tt0070783, 5.1, 500
+Record offset: 126: tt0070784, 5.5, 294
+Record offset: 144: tt0070785, 6.9, 15
+Record offset: 162: tt0070786, 5.2, 11
+Record offset: 180: tt0070787, 5.8, 271
+==========Block content(5191)==========
+Record offset: 0: tt0082271, 6.2, 30
+Record offset: 18: tt0082272, 6.2, 891
+Record offset: 36: tt0082273, 2.6, 328
+Record offset: 54: tt0082274, 7.6, 14
+Record offset: 72: tt0082275, 7.1, 500
+Record offset: 90: tt0082276, 3.5, 696
+Record offset: 108: tt0082277, 7, 115
+Record offset: 126: tt0082278, 3.5, 123
+Record offset: 144: tt0082279, 5.1, 1760
+Record offset: 162: tt0082280, 7.9, 730
+Record offset: 180: tt0082282, 5, 7
+==========Block content(5235)==========
+Record offset: 0: tt0082840, 6.1, 42
+Record offset: 18: tt0082841, 5.1, 500
+Record offset: 36: tt0082842, 6.9, 1415
+Record offset: 54: tt0082843, 6.8, 1283
+Record offset: 72: tt0082844, 5.2, 37
+Record offset: 90: tt0082845, 7.3, 6
+Record offset: 108: tt0082846, 7.6, 27015
+Record offset: 126: tt0082847, 4.9, 73
+Record offset: 144: tt0082848, 4.6, 50
+Record offset: 162: tt0082849, 5.5, 401
+Record offset: 180: tt0082850, 5.8, 59
+==========Block content(5416)==========
+Record offset: 0: tt0085188, 7.1, 8
+Record offset: 18: tt0085190, 7.1, 467
+Record offset: 36: tt0085193, 7.1, 11
+Record offset: 54: tt0085195, 6.4, 25
+Record offset: 72: tt0085196, 6.7, 6
+Record offset: 90: tt0085197, 5.6, 24
+Record offset: 108: tt0085198, 7, 500
+Record offset: 126: tt0085199, 5.9, 17
+Record offset: 144: tt0085200, 5.1, 91
+Record offset: 162: tt0085201, 2.6, 16
+Record offset: 180: tt0085202, 5.5, 41
+==========Block content(5814)==========
+Record offset: 0: tt0090354, 5.2, 224
+Record offset: 18: tt0090355, 3.7, 37
+Record offset: 36: tt0090356, 3.8, 500
+Record offset: 54: tt0090357, 6.8, 18804
+Record offset: 72: tt0090358, 6.2, 159
+Record offset: 90: tt0090359, 7.1, 58
+Record offset: 108: tt0090360, 6.6, 163
+Record offset: 126: tt0090361, 5.2, 15
+Record offset: 144: tt0090362, 7, 34
+Record offset: 162: tt0090363, 5.2, 16
+Record offset: 180: tt0090364, 4.9, 60
+==========Block content(6508)==========
+Record offset: 0: tt0099252, 5.7, 276
+Record offset: 18: tt0099253, 5.9, 43957
+Record offset: 36: tt0099254, 6.4, 216
+Record offset: 54: tt0099255, 6.5, 92
+Record offset: 72: tt0099256, 5.2, 58
+Record offset: 90: tt0099257, 7.1, 39
+Record offset: 108: tt0099258, 5.6, 16
+Record offset: 126: tt0099259, 6, 500
+Record offset: 144: tt0099260, 5.2, 1059
+Record offset: 162: tt0099261, 4.9, 48
+Record offset: 180: tt0099262, 6.9, 227
+==========Block content(6626)==========
+Record offset: 0: tt0100807, 6.4, 45
+Record offset: 18: tt0100808, 7.1, 88
+Record offset: 36: tt0100811, 5.3, 500
+Record offset: 54: tt0100812, 5.6, 97
+Record offset: 72: tt0100813, 7.2, 4619
+Record offset: 90: tt0100814, 7.1, 117360
+Record offset: 108: tt0100815, 5.5, 32
+Record offset: 126: tt0100816, 6.3, 1766
+Record offset: 144: tt0100817, 5.1, 202
+Record offset: 162: tt0100819, 7, 77
+Record offset: 180: tt0100820, 6.6, 79
+==========Block content(7061)==========
+Record offset: 0: tt0106600, 4.8, 500
+Record offset: 18: tt0106601, 4.4, 282
+Record offset: 36: tt0106602, 7.6, 13
+Record offset: 54: tt0106603, 5.1, 29
+Record offset: 72: tt0106609, 6.1, 61
+Record offset: 90: tt0106610, 5.8, 117
+Record offset: 108: tt0106611, 7, 90521
+Record offset: 126: tt0106612, 5.9, 155
+Record offset: 144: tt0106613, 4.1, 8122
+Record offset: 162: tt0106614, 5.7, 133
+Record offset: 180: tt0106616, 4.8, 101
+==========Block content(8008)==========
+Record offset: 0: tt0119415, 4.6, 500
+Record offset: 18: tt0119416, 5.6, 781
+Record offset: 36: tt0119418, 1.6, 577
+Record offset: 54: tt0119419, 6.4, 11
+Record offset: 72: tt0119421, 6.5, 184
+Record offset: 90: tt0119422, 7.2, 92
+Record offset: 108: tt0119423, 2.7, 315
+Record offset: 126: tt0119424, 7.7, 20
+Record offset: 144: tt0119425, 6.8, 10
+Record offset: 162: tt0119426, 5, 1543
+Record offset: 180: tt0119427, 6.1, 2126
+==========Block content(8088)==========
+Record offset: 0: tt0120453, 6.9, 350
+Record offset: 18: tt0120454, 7.2, 418
+Record offset: 36: tt0120455, 6.4, 14
+Record offset: 54: tt0120456, 7.5, 2420
+Record offset: 72: tt0120458, 5, 26149
+Record offset: 90: tt0120459, 5.1, 28
+Record offset: 108: tt0120460, 5.5, 118
+Record offset: 126: tt0120461, 5.5, 70972
+Record offset: 144: tt0120462, 4.5, 500
+Record offset: 162: tt0120464, 7.4, 5
+Record offset: 180: tt0120466, 6.8, 83
+==========Block content(9398)==========
+Record offset: 0: tt0149695, 4.3, 500
+Record offset: 18: tt0149697, 7.2, 16
+Record offset: 36: tt0149698, 4.2, 257
+Record offset: 54: tt0149704, 9, 9
+Record offset: 72: tt0149705, 5.9, 35
+Record offset: 90: tt0149706, 7.4, 22
+Record offset: 108: tt0149707, 6.5, 62
+Record offset: 126: tt0149708, 7.5, 58
+Record offset: 144: tt0149709, 4.8, 11
+Record offset: 162: tt0149710, 7.1, 14
+Record offset: 180: tt0149712, 5.5, 20
+==========Block content(10027)==========
+Record offset: 0: tt0163446, 8.2, 24
+Record offset: 18: tt0163447, 7.2, 33
+Record offset: 36: tt0163449, 8.2, 45
+Record offset: 54: tt0163450, 8, 357
+Record offset: 72: tt0163451, 7.8, 34
+Record offset: 90: tt0163452, 7.5, 10
+Record offset: 108: tt0163453, 7.1, 8
+Record offset: 126: tt0163454, 7.4, 21
+Record offset: 144: tt0163455, 7.6, 10
+Record offset: 162: tt0163456, 8.1, 500
+Record offset: 180: tt0163457, 8.5, 51
+==========Block content(10986)==========
+Record offset: 0: tt0184446, 8.2, 9
+Record offset: 18: tt0184447, 6.1, 11
+Record offset: 36: tt0184452, 6.4, 134
+Record offset: 54: tt0184454, 6, 7
+Record offset: 72: tt0184456, 5.7, 500
+Record offset: 90: tt0184457, 4.5, 130
+Record offset: 108: tt0184458, 8.2, 5
+Record offset: 126: tt0184460, 4.8, 77
+Record offset: 144: tt0184462, 4.9, 18
+Record offset: 162: tt0184463, 2.9, 776
+Record offset: 180: tt0184464, 7.6, 8
+==========Block content(12273)==========
+Record offset: 0: tt0214358, 7.3, 56
+Record offset: 18: tt0214359, 6, 50
+Record offset: 36: tt0214361, 7.5, 24
+Record offset: 54: tt0214362, 8.1, 500
+Record offset: 72: tt0214364, 6.9, 69
+Record offset: 90: tt0214365, 6.5, 15
+Record offset: 108: tt0214367, 3.6, 39
+Record offset: 126: tt0214368, 8.5, 213
+Record offset: 144: tt0214369, 6.3, 11
+Record offset: 162: tt0214371, 6.7, 285
+Record offset: 180: tt0214372, 7.1, 12
+==========Block content(12437)==========
+Record offset: 0: tt0217993, 7.7, 6
+Record offset: 18: tt0217994, 6.9, 11
+Record offset: 36: tt0217995, 5.2, 6
+Record offset: 54: tt0217996, 5.4, 10
+Record offset: 72: tt0217997, 6.6, 12
+Record offset: 90: tt0217999, 7.5, 6
+Record offset: 108: tt0218000, 6.3, 500
+Record offset: 126: tt0218001, 6.9, 8
+Record offset: 144: tt0218003, 6.3, 71
+Record offset: 162: tt0218007, 4.5, 13
+Record offset: 180: tt0218010, 7.4, 20
+==========Block content(15395)==========
+Record offset: 0: tt0289103, 8, 27
+Record offset: 18: tt0289107, 3.8, 13
+Record offset: 36: tt0289108, 4.2, 56
+Record offset: 54: tt0289109, 6.2, 28
+Record offset: 72: tt0289110, 7.5, 6
+Record offset: 90: tt0289111, 6.6, 67
+Record offset: 108: tt0289112, 7.5, 73
+Record offset: 126: tt0289113, 4.5, 11
+Record offset: 144: tt0289114, 6.2, 20
+Record offset: 162: tt0289115, 5.1, 500
+Record offset: 180: tt0289118, 6.4, 70
+==========Block content(16032)==========
+Record offset: 0: tt0303462, 7, 9
+Record offset: 18: tt0303468, 8.3, 216
+Record offset: 36: tt0303470, 7.6, 16
+Record offset: 54: tt0303477, 2.4, 54
+Record offset: 72: tt0303479, 6.3, 10
+Record offset: 90: tt0303481, 4, 10
+Record offset: 108: tt0303483, 6.8, 9
+Record offset: 126: tt0303487, 5.9, 500
+Record offset: 144: tt0303490, 3, 22
+Record offset: 162: tt0303492, 7.8, 16
+Record offset: 180: tt0303495, 4.7, 12
+==========Block content(16518)==========
+Record offset: 0: tt0314564, 2.9, 500
+Record offset: 18: tt0314565, 2.2, 87
+Record offset: 36: tt0314566, 6.1, 11
+Record offset: 54: tt0314567, 6.4, 31
+Record offset: 72: tt0314572, 7.2, 6
+Record offset: 90: tt0314573, 7.7, 15
+Record offset: 108: tt0314574, 6, 12
+Record offset: 126: tt0314577, 5.7, 31
+Record offset: 144: tt0314579, 8.8, 30
+Record offset: 162: tt0314580, 7.5, 62
+Record offset: 180: tt0314583, 7.2, 61
+==========Block content(17008)==========
+Record offset: 0: tt0327077, 7.5, 10
+Record offset: 18: tt0327078, 6.8, 32
+Record offset: 36: tt0327082, 3.9, 11
+Record offset: 54: tt0327084, 6.7, 156551
+Record offset: 72: tt0327085, 5.5, 500
+Record offset: 90: tt0327086, 6.8, 283
+Record offset: 108: tt0327087, 8.2, 18
+Record offset: 126: tt0327091, 7, 5
+Record offset: 144: tt0327092, 3.9, 10
+Record offset: 162: tt0327093, 4.3, 12
+Record offset: 180: tt0327096, 6.3, 22
+==========Block content(17023)==========
+Record offset: 0: tt0327526, 4.5, 6
+Record offset: 18: tt0327539, 5.4, 40
+Record offset: 36: tt0327543, 5.7, 6
+Record offset: 54: tt0327545, 6.1, 21
+Record offset: 72: tt0327546, 6.4, 500
+Record offset: 90: tt0327548, 9, 54
+Record offset: 108: tt0327549, 7.8, 21
+Record offset: 126: tt0327551, 5.8, 38
+Record offset: 144: tt0327554, 3.4, 108943
+Record offset: 162: tt0327556, 4.9, 8
+Record offset: 180: tt0327566, 8.6, 25
+==========Block content(19707)==========
+Record offset: 0: tt0398438, 7.8, 99
+Record offset: 18: tt0398440, 7, 18
+Record offset: 36: tt0398442, 6.7, 11
+Record offset: 54: tt0398443, 8.2, 26
+Record offset: 72: tt0398444, 8, 5
+Record offset: 90: tt0398445, 3.7, 6
+Record offset: 108: tt0398446, 8.7, 7
+Record offset: 126: tt0398450, 6.5, 66
+Record offset: 144: tt0398451, 6.5, 500
+Record offset: 162: tt0398453, 8.7, 12
+Record offset: 180: tt0398455, 7.9, 37
+==========Block content(20664)==========
+Record offset: 0: tt0424342, 6.6, 32
+Record offset: 18: tt0424343, 5.3, 6
+Record offset: 36: tt0424345, 7.3, 128891
+Record offset: 54: tt0424347, 4, 7
+Record offset: 72: tt0424349, 5.6, 18
+Record offset: 90: tt0424350, 7.8, 12
+Record offset: 108: tt0424359, 7.2, 320
+Record offset: 126: tt0424360, 6.6, 5
+Record offset: 144: tt0424362, 7.6, 7
+Record offset: 162: tt0424363, 7, 29
+Record offset: 180: tt0424365, 5.5, 500
+==========Block content(21646)==========
+Record offset: 0: tt0450944, 6, 8
+Record offset: 18: tt0450945, 7.6, 7
+Record offset: 36: tt0450948, 3.8, 74
+Record offset: 54: tt0450949, 7.9, 66
+Record offset: 72: tt0450950, 4.3, 291
+Record offset: 90: tt0450951, 6.9, 134
+Record offset: 108: tt0450952, 4.7, 6
+Record offset: 126: tt0450953, 2.9, 20
+Record offset: 144: tt0450954, 8, 14
+Record offset: 162: tt0450955, 3.9, 500
+Record offset: 180: tt0450956, 8.1, 10
+==========Block content(23977)==========
+Record offset: 0: tt0514438, 9.2, 805
+Record offset: 18: tt0514439, 9.1, 590
+Record offset: 36: tt0514440, 9, 561
+Record offset: 54: tt0514441, 9.1, 692
+Record offset: 72: tt0514442, 9.1, 500
+Record offset: 90: tt0514443, 9.3, 772
+Record offset: 108: tt0514444, 9.1, 535
+Record offset: 126: tt0514445, 8.5, 743
+Record offset: 144: tt0514446, 8.9, 809
+Record offset: 162: tt0514447, 9.3, 709
+Record offset: 180: tt0514448, 9.3, 700
+==========Block content(24064)==========
+Record offset: 0: tt0517602, 8.1, 8
+Record offset: 18: tt0517615, 7.4, 411
+Record offset: 36: tt0517616, 7.3, 463
+Record offset: 54: tt0517617, 7.2, 443
+Record offset: 72: tt0517618, 7.8, 454
+Record offset: 90: tt0517619, 7.3, 451
+Record offset: 108: tt0517620, 7.3, 314
+Record offset: 126: tt0517621, 7.7, 405
+Record offset: 144: tt0517622, 8, 502
+Record offset: 162: tt0517623, 8.1, 500
+Record offset: 180: tt0517624, 7.8, 456
+==========Block content(25675)==========
+Record offset: 0: tt0558710, 8.5, 565
+Record offset: 18: tt0558711, 7.9, 414
+Record offset: 36: tt0558712, 8.1, 485
+Record offset: 54: tt0558713, 7.9, 481
+Record offset: 72: tt0558714, 8.1, 495
+Record offset: 90: tt0558715, 8.1, 500
+Record offset: 108: tt0558716, 7.8, 425
+Record offset: 126: tt0558717, 8.2, 477
+Record offset: 144: tt0558718, 8.3, 417
+Record offset: 162: tt0558719, 8.9, 569
+Record offset: 180: tt0558720, 8.6, 1000
+==========Block content(26683)==========
+Record offset: 0: tt0582473, 8.6, 597
+Record offset: 18: tt0582474, 7.7, 471
+Record offset: 36: tt0582475, 7.7, 405
+Record offset: 54: tt0582476, 8.3, 560
+Record offset: 72: tt0582477, 8, 498
+Record offset: 90: tt0582478, 8.3, 593
+Record offset: 108: tt0582479, 7.6, 448
+Record offset: 126: tt0582480, 8.3, 500
+Record offset: 144: tt0582481, 8.1, 491
+Record offset: 162: tt0582482, 8.8, 722
+Record offset: 180: tt0582483, 8.4, 627
+==========Block content(26896)==========
+Record offset: 0: tt0588109, 7.3, 163
+Record offset: 18: tt0588110, 7.1, 132
+Record offset: 36: tt0588111, 7.4, 131
+Record offset: 54: tt0588112, 8.6, 568
+Record offset: 72: tt0588113, 8.1, 470
+Record offset: 90: tt0588114, 8.7, 500
+Record offset: 108: tt0588115, 8.1, 468
+Record offset: 126: tt0588116, 8.3, 526
+Record offset: 144: tt0588117, 8.6, 608
+Record offset: 162: tt0588118, 8.1, 458
+Record offset: 180: tt0588119, 7.5, 452
+==========Block content(26898)==========
+Record offset: 0: tt0588131, 8.2, 658
+Record offset: 18: tt0588132, 8.2, 538
+Record offset: 36: tt0588133, 8.7, 687
+Record offset: 54: tt0588134, 7.8, 471
+Record offset: 72: tt0588135, 8, 650
+Record offset: 90: tt0588136, 7.9, 531
+Record offset: 108: tt0588137, 8, 451
+Record offset: 126: tt0588138, 8.2, 608
+Record offset: 144: tt0588139, 8.1, 500
+Record offset: 162: tt0588140, 7.7, 455
+Record offset: 180: tt0588141, 8.4, 695
+==========Block content(26903)==========
+Record offset: 0: tt0588186, 8.3, 503
+Record offset: 18: tt0588187, 8.2, 500
+Record offset: 36: tt0588188, 8.7, 510
+Record offset: 54: tt0588189, 8.4, 472
+Record offset: 72: tt0588190, 7.8, 554
+Record offset: 90: tt0588191, 8.7, 492
+Record offset: 108: tt0588192, 8.3, 637
+Record offset: 126: tt0588193, 8.1, 524
+Record offset: 144: tt0588194, 8, 519
+Record offset: 162: tt0588195, 8.7, 603
+Record offset: 180: tt0588196, 8.1, 472
+==========Block content(26905)==========
+Record offset: 0: tt0588208, 8.1, 562
+Record offset: 18: tt0588209, 8.2, 885
+Record offset: 36: tt0588210, 8.7, 579
+Record offset: 54: tt0588211, 7.9, 452
+Record offset: 72: tt0588212, 8.1, 488
+Record offset: 90: tt0588213, 7.9, 435
+Record offset: 108: tt0588214, 8.6, 500
+Record offset: 126: tt0588215, 8.4, 494
+Record offset: 144: tt0588216, 8.3, 595
+Record offset: 162: tt0588217, 8.1, 605
+Record offset: 180: tt0588218, 7.6, 438
+==========Block content(28437)==========
+Record offset: 0: tt0629704, 8.8, 603
+Record offset: 18: tt0629705, 8.7, 742
+Record offset: 36: tt0629706, 8.8, 662
+Record offset: 54: tt0629707, 8.8, 756
+Record offset: 72: tt0629708, 8.1, 500
+Record offset: 90: tt0629709, 8.9, 831
+Record offset: 108: tt0629710, 8.9, 748
+Record offset: 126: tt0629711, 8.8, 831
+Record offset: 144: tt0629712, 8.9, 1106
+Record offset: 162: tt0629713, 8.4, 583
+Record offset: 180: tt0629714, 8.9, 862
+==========Block content(28863)==========
+Record offset: 0: tt0640292, 7.8, 342
+Record offset: 18: tt0640293, 8.5, 496
+Record offset: 36: tt0640294, 8, 373
+Record offset: 54: tt0640295, 7.7, 344
+Record offset: 72: tt0640296, 7.7, 336
+Record offset: 90: tt0640297, 7.8, 451
+Record offset: 108: tt0640298, 8, 500
+Record offset: 126: tt0640299, 7.7, 337
+Record offset: 144: tt0640300, 8.1, 440
+Record offset: 162: tt0640301, 8, 580
+Record offset: 180: tt0640302, 8.1, 441
+==========Block content(28864)==========
+Record offset: 0: tt0640303, 7.9, 375
+Record offset: 18: tt0640304, 6.7, 400
+Record offset: 36: tt0640305, 6.5, 422
+Record offset: 54: tt0640306, 7.8, 418
+Record offset: 72: tt0640307, 7.6, 342
+Record offset: 90: tt0640308, 8.2, 500
+Record offset: 108: tt0640309, 8.1, 542
+Record offset: 126: tt0640310, 7.8, 435
+Record offset: 144: tt0640311, 7.6, 381
+Record offset: 162: tt0640312, 8, 423
+Record offset: 180: tt0640313, 8.3, 450
+==========Block content(29178)==========
+Record offset: 0: tt0647507, 8.1, 640
+Record offset: 18: tt0647508, 8, 579
+Record offset: 36: tt0647510, 7.6, 515
+Record offset: 54: tt0647511, 7.2, 564
+Record offset: 72: tt0647512, 7.2, 500
+Record offset: 90: tt0647513, 8.1, 528
+Record offset: 108: tt0647514, 7.2, 553
+Record offset: 126: tt0647515, 7.9, 987
+Record offset: 144: tt0647519, 8.6, 288
+Record offset: 162: tt0647520, 8.4, 271
+Record offset: 180: tt0647521, 8.3, 258
+==========Block content(31847)==========
+Record offset: 0: tt0716906, 6.8, 589
+Record offset: 18: tt0716907, 6.8, 433
+Record offset: 36: tt0716908, 6.9, 547
+Record offset: 54: tt0716909, 8.4, 805
+Record offset: 72: tt0716910, 5.4, 392
+Record offset: 90: tt0716911, 8.3, 866
+Record offset: 108: tt0716912, 7.6, 500
+Record offset: 126: tt0716914, 7.2, 26
+Record offset: 144: tt0716915, 6.1, 16
+Record offset: 162: tt0716916, 5.6, 15
+Record offset: 180: tt0716917, 6.9, 23
+==========Block content(31962)==========
+Record offset: 0: tt0720134, 8, 769
+Record offset: 18: tt0720135, 7.4, 586
+Record offset: 36: tt0720136, 7.4, 512
+Record offset: 54: tt0720137, 7.4, 557
+Record offset: 72: tt0720138, 7.6, 552
+Record offset: 90: tt0720139, 7.1, 495
+Record offset: 108: tt0720140, 7.1, 500
+Record offset: 126: tt0720141, 7.6, 603
+Record offset: 144: tt0720142, 8.2, 797
+Record offset: 162: tt0720143, 8.1, 1497
+Record offset: 180: tt0720144, 7.6, 645
+==========Block content(34642)==========
+Record offset: 0: tt0807676, 6.1, 13
+Record offset: 18: tt0807677, 2.5, 24
+Record offset: 36: tt0807678, 7.6, 9
+Record offset: 54: tt0807679, 7.9, 10
+Record offset: 72: tt0807680, 6.9, 8
+Record offset: 90: tt0807682, 4.7, 7
+Record offset: 108: tt0807685, 8.8, 782
+Record offset: 126: tt0807686, 7.3, 566
+Record offset: 144: tt0807687, 7.8, 438
+Record offset: 162: tt0807688, 8.1, 455
+Record offset: 180: tt0807689, 8.6, 500
+==========Block content(45645)==========
+Record offset: 0: tt1169167, 7.6, 5
+Record offset: 18: tt1169167, 7.3, 605
+Record offset: 36: tt1169168, 9, 295
+Record offset: 54: tt1169168, 7.2, 98
+Record offset: 72: tt1169169, 6.4, 500
+Record offset: 90: tt1169169, 7.1, 22
+Record offset: 108: tt1169170, 9.3, 6
+Record offset: 126: tt1169171, 7.2, 17
+Record offset: 144: tt1169172, 7.6, 709
+Record offset: 162: tt1169172, 6.8, 41
+Record offset: 180: tt1169178, 5, 5
+==========Block content(48424)==========
+Record offset: 0: tt1261877, 8.2, 6
+Record offset: 18: tt1261889, 3.2, 193
+Record offset: 36: tt1261894, 8.2, 49
+Record offset: 54: tt1261895, 8.3, 40
+Record offset: 72: tt1261900, 7.2, 1453
+Record offset: 90: tt1261905, 7.3, 6
+Record offset: 108: tt1261908, 8.1, 500
+Record offset: 126: tt1261909, 7.8, 584
+Record offset: 144: tt1261910, 6.3, 186
+Record offset: 162: tt1261925, 5.5, 73
+Record offset: 180: tt1261925, 7.4, 145
+==========Block content(50164)==========
+Record offset: 0: tt1340798, 2.6, 54
+Record offset: 18: tt1340799, 6.6, 309
+Record offset: 36: tt1340800, 7, 183703
+Record offset: 54: tt1340801, 5, 161
+Record offset: 72: tt1340802, 6, 500
+Record offset: 90: tt1340803, 4.7, 808
+Record offset: 108: tt1340804, 7.2, 41
+Record offset: 126: tt1340810, 7.4, 35
+Record offset: 144: tt1340816, 6.5, 58
+Record offset: 162: tt1340817, 7.1, 48
+Record offset: 180: tt1340818, 7.1, 35
+==========Block content(50624)==========
+Record offset: 0: tt1365489, 7.6, 12
+Record offset: 18: tt1365490, 6.5, 500
+Record offset: 36: tt1365491, 6.3, 140
+Record offset: 54: tt1365493, 5.6, 85
+Record offset: 72: tt1365495, 6.2, 5
+Record offset: 90: tt1365496, 5.7, 77
+Record offset: 108: tt1365497, 5.8, 12
+Record offset: 126: tt1365500, 6.1, 122
+Record offset: 144: tt1365513, 8.2, 10
+Record offset: 162: tt1365514, 6, 95
+Record offset: 180: tt1365519, 6.3, 185721
+==========Block content(50727)==========
+Record offset: 0: tt1371648, 6.9, 83
+Record offset: 18: tt1371649, 8.8, 5
+Record offset: 36: tt1371650, 6.8, 32
+Record offset: 54: tt1371651, 6.8, 11
+Record offset: 72: tt1371652, 7.8, 42
+Record offset: 90: tt1371653, 6.5, 8
+Record offset: 108: tt1371697, 7.9, 500
+Record offset: 126: tt1371699, 6.6, 10
+Record offset: 144: tt1371700, 6.5, 354
+Record offset: 162: tt1371705, 7.7, 26
+Record offset: 180: tt1371708, 6.2, 6
+==========Block content(50804)==========
+Record offset: 0: tt1376427, 6.6, 56
+Record offset: 18: tt1376435, 6.1, 9
+Record offset: 36: tt1376440, 7, 5
+Record offset: 54: tt1376451, 5.9, 500
+Record offset: 72: tt1376452, 7.6, 15
+Record offset: 90: tt1376455, 8, 5
+Record offset: 108: tt1376459, 5.9, 7
+Record offset: 126: tt1376460, 2, 1543
+Record offset: 144: tt1376463, 6.9, 8
+Record offset: 162: tt1376469, 6.4, 10
+Record offset: 180: tt1376473, 6.8, 14
+==========Block content(51539)==========
+Record offset: 0: tt1421383, 7.6, 500
+Record offset: 18: tt1421388, 7.4, 9
+Record offset: 36: tt1421490, 6.5, 8
+Record offset: 54: tt1421491, 7.2, 5
+Record offset: 72: tt1421496, 6.9, 72
+Record offset: 90: tt1421497, 7.5, 70
+Record offset: 108: tt1421499, 6, 619
+Record offset: 126: tt1421500, 7.8, 36
+Record offset: 144: tt1421508, 6.6, 11
+Record offset: 162: tt1421511, 7.4, 1013
+Record offset: 180: tt1421512, 6.7, 48
+==========Block content(53069)==========
+Record offset: 0: tt1515725, 6.1, 411
+Record offset: 18: tt1515726, 4.3, 41
+Record offset: 36: tt1515730, 7.8, 683
+Record offset: 54: tt1515736, 7.5, 500
+Record offset: 72: tt1515739, 7.4, 16
+Record offset: 90: tt1515741, 7.1, 32
+Record offset: 108: tt1515742, 6.9, 10
+Record offset: 126: tt1515743, 4.2, 14
+Record offset: 144: tt1515744, 5.2, 28
+Record offset: 162: tt1515746, 6.1, 10
+Record offset: 180: tt1515750, 6.7, 52
+==========Block content(53426)==========
+Record offset: 0: tt1535977, 7.2, 52
+Record offset: 18: tt1535978, 7.3, 6
+Record offset: 36: tt1535980, 9.2, 9
+Record offset: 54: tt1535981, 6, 23
+Record offset: 72: tt1535982, 6.8, 5
+Record offset: 90: tt1535983, 5.4, 7
+Record offset: 108: tt1535989, 6.4, 500
+Record offset: 126: tt1535999, 2.1, 157
+Record offset: 144: tt1536002, 9.4, 5
+Record offset: 162: tt1536006, 8.2, 6
+Record offset: 180: tt1536018, 6.8, 6
+==========Block content(53981)==========
+Record offset: 0: tt1571031, 7.4, 257
+Record offset: 18: tt1571036, 6.5, 10
+Record offset: 36: tt1571057, 7.2, 26
+Record offset: 54: tt1571094, 4.9, 35
+Record offset: 72: tt1571100, 5.9, 500
+Record offset: 90: tt1571101, 6.1, 483
+Record offset: 108: tt1571102, 6.5, 497
+Record offset: 126: tt1571105, 8.4, 25
+Record offset: 144: tt1571119, 7.9, 9
+Record offset: 162: tt1571120, 8, 10
+Record offset: 180: tt1571121, 7.2, 11
+==========Block content(54359)==========
+Record offset: 0: tt1592525, 6.1, 93443
+Record offset: 18: tt1592527, 7.6, 2047
+Record offset: 36: tt1592528, 5.9, 28
+Record offset: 54: tt1592530, 5.9, 76
+Record offset: 72: tt1592531, 6, 36
+Record offset: 90: tt1592534, 6.6, 500
+Record offset: 108: tt1592536, 7.8, 11
+Record offset: 126: tt1592539, 5.9, 138
+Record offset: 144: tt1592541, 8.8, 6
+Record offset: 162: tt1592543, 7.8, 31
+Record offset: 180: tt1592544, 6.4, 17
+==========Block content(54983)==========
+Record offset: 0: tt1632713, 5.5, 13
+Record offset: 18: tt1632722, 5.3, 253
+Record offset: 36: tt1632724, 6.8, 49
+Record offset: 54: tt1632726, 7.3, 106
+Record offset: 72: tt1632728, 6.1, 169
+Record offset: 90: tt1632749, 8.4, 40
+Record offset: 108: tt1632750, 7.5, 40
+Record offset: 126: tt1632756, 7.4, 500
+Record offset: 144: tt1632759, 5.4, 7
+Record offset: 162: tt1632780, 7.3, 9
+Record offset: 180: tt1632787, 8.3, 22
+==========Block content(55108)==========
+Record offset: 0: tt1640728, 6.5, 37
+Record offset: 18: tt1640739, 6.4, 28
+Record offset: 36: tt1640740, 7.7, 500
+Record offset: 54: tt1640741, 7.7, 457
+Record offset: 72: tt1640742, 7.3, 450
+Record offset: 90: tt1640743, 7.4, 445
+Record offset: 108: tt1640744, 7.7, 450
+Record offset: 126: tt1640745, 7.5, 438
+Record offset: 144: tt1640746, 7.2, 428
+Record offset: 162: tt1640747, 7.4, 434
+Record offset: 180: tt1640748, 8.1, 625
+==========Block content(55248)==========
+Record offset: 0: tt1648680, 7.4, 337
+Record offset: 18: tt1648681, 7.6, 515
+Record offset: 36: tt1648682, 8.2, 505
+Record offset: 54: tt1648683, 7.5, 500
+Record offset: 72: tt1648684, 6.6, 547
+Record offset: 90: tt1648685, 7.7, 449
+Record offset: 108: tt1648686, 7.6, 27
+Record offset: 126: tt1648687, 5.9, 14
+Record offset: 144: tt1648690, 8.1, 10
+Record offset: 162: tt1648691, 8.1, 59
+Record offset: 180: tt1648692, 1.7, 10
+==========Block content(55791)==========
+Record offset: 0: tt1684548, 3.5, 1065
+Record offset: 18: tt1684549, 7.4, 73
+Record offset: 36: tt1684551, 7.9, 4530
+Record offset: 54: tt1684552, 6.6, 11
+Record offset: 72: tt1684555, 3.6, 2288
+Record offset: 90: tt1684557, 6.7, 55
+Record offset: 108: tt1684558, 5.3, 500
+Record offset: 126: tt1684559, 7.8, 20
+Record offset: 144: tt1684561, 7.8, 33
+Record offset: 162: tt1684564, 4.3, 1947
+Record offset: 180: tt1684567, 3.3, 516
+==========Block content(56185)==========
+Record offset: 0: tt1711016, 6.4, 558
+Record offset: 18: tt1711017, 6.7, 7
+Record offset: 36: tt1711018, 5, 5537
+Record offset: 54: tt1711019, 5.5, 15
+Record offset: 72: tt1711021, 6.2, 500
+Record offset: 90: tt1711023, 6.2, 24
+Record offset: 108: tt1711024, 6.6, 19
+Record offset: 126: tt1711031, 6.5, 16
+Record offset: 144: tt1711057, 7, 38
+Record offset: 162: tt1711162, 5.4, 12
+Record offset: 180: tt1711163, 6.1, 15
+==========Block content(56480)==========
+Record offset: 0: tt1727506, 4.8, 662
+Record offset: 18: tt1727510, 5.8, 17
+Record offset: 36: tt1727516, 5.7, 6338
+Record offset: 54: tt1727517, 6.8, 10
+Record offset: 72: tt1727519, 4.1, 500
+Record offset: 90: tt1727520, 6.6, 9
+Record offset: 108: tt1727523, 5.5, 1779
+Record offset: 126: tt1727525, 6.2, 60
+Record offset: 144: tt1727526, 4.9, 76
+Record offset: 162: tt1727527, 6.1, 13
+Record offset: 180: tt1727528, 4.4, 15
+==========Block content(58442)==========
+Record offset: 0: tt1857537, 9.7, 9
+Record offset: 18: tt1857540, 9.1, 9
+Record offset: 36: tt1857545, 7.7, 18
+Record offset: 54: tt1857546, 8.4, 89
+Record offset: 72: tt1857549, 8.2, 21
+Record offset: 90: tt1857551, 7.2, 13
+Record offset: 108: tt1857552, 8.7, 14
+Record offset: 126: tt1857553, 8.1, 14
+Record offset: 144: tt1857554, 7.6, 12
+Record offset: 162: tt1857577, 7.8, 43
+Record offset: 180: tt1857596, 7.8, 500
+==========Block content(60496)==========
+Record offset: 0: tt2040649, 7.9, 523
+Record offset: 18: tt2040650, 7.3, 428
+Record offset: 36: tt2040651, 7.8, 500
+Record offset: 54: tt2040652, 7.3, 413
+Record offset: 72: tt2040653, 7.4, 427
+Record offset: 90: tt2040654, 7.4, 419
+Record offset: 108: tt2040655, 8.3, 4396
+Record offset: 126: tt2040693, 5.1, 16
+Record offset: 144: tt2040696, 6.4, 39
+Record offset: 162: tt2040713, 5.6, 5
+Record offset: 180: tt2040714, 5.6, 5
+==========Block content(62949)==========
+Record offset: 0: tt2236201, 3.2, 6
+Record offset: 18: tt2236214, 7.5, 13
+Record offset: 36: tt2236218, 2.1, 14
+Record offset: 54: tt2236257, 7.4, 500
+Record offset: 72: tt2236346, 8.5, 19
+Record offset: 90: tt2236350, 7, 35
+Record offset: 108: tt2236354, 6.2, 9
+Record offset: 126: tt2236358, 2.9, 167
+Record offset: 144: tt2236366, 8.5, 131
+Record offset: 162: tt2236376, 5.2, 19
+Record offset: 180: tt2236394, 6, 5
+==========Block content(63076)==========
+Record offset: 0: tt2247708, 6.4, 5
+Record offset: 18: tt2247709, 6.3, 566
+Record offset: 36: tt2247712, 3.8, 14
+Record offset: 54: tt2247713, 7.6, 484
+Record offset: 72: tt2247715, 7.4, 474
+Record offset: 90: tt2247719, 7.7, 500
+Record offset: 108: tt2247725, 7.7, 182
+Record offset: 126: tt2247726, 8.7, 6
+Record offset: 144: tt2247728, 8.6, 265
+Record offset: 162: tt2247732, 6.7, 7679
+Record offset: 180: tt2247744, 7.8, 74
+==========Block content(64401)==========
+Record offset: 0: tt2365177, 6.9, 17
+Record offset: 18: tt2365184, 2.8, 5
+Record offset: 36: tt2365211, 8.1, 500
+Record offset: 54: tt2365217, 7.8, 5
+Record offset: 72: tt2365221, 8.2, 13
+Record offset: 90: tt2365224, 7.4, 398
+Record offset: 108: tt2365225, 8.6, 9
+Record offset: 126: tt2365227, 8.2, 177
+Record offset: 144: tt2365229, 8.3, 202
+Record offset: 162: tt2365231, 7.5, 6
+Record offset: 180: tt2365269, 6.3, 95
+==========Block content(66515)==========
+Record offset: 0: tt2662182, 6.8, 8
+Record offset: 18: tt2662190, 9.6, 9
+Record offset: 36: tt2662206, 7.3, 16
+Record offset: 54: tt2662212, 5.8, 29
+Record offset: 72: tt2662218, 5.1, 519
+Record offset: 90: tt2662220, 7.3, 15
+Record offset: 108: tt2662222, 7.5, 15
+Record offset: 126: tt2662224, 6, 30
+Record offset: 144: tt2662226, 7.3, 15
+Record offset: 162: tt2662228, 6.6, 500
+Record offset: 180: tt2662230, 6.7, 82
+==========Block content(67057)==========
+Record offset: 0: tt2763940, 5.2, 5
+Record offset: 18: tt2763984, 7.8, 13
+Record offset: 36: tt2763990, 7.8, 6
+Record offset: 54: tt2764022, 7.6, 8
+Record offset: 72: tt2764038, 8.3, 500
+Record offset: 90: tt2764044, 7.5, 31
+Record offset: 108: tt2764048, 6.7, 2098
+Record offset: 126: tt2764056, 7.9, 798
+Record offset: 144: tt2764062, 8, 726
+Record offset: 162: tt2764070, 8.1, 693
+Record offset: 180: tt2764094, 3.6, 33
+==========Block content(67321)==========
+Record offset: 0: tt2812992, 8.6, 11
+Record offset: 18: tt2813000, 6.8, 5
+Record offset: 36: tt2813062, 8.9, 22
+Record offset: 54: tt2813064, 5.6, 500
+Record offset: 72: tt2813068, 7.6, 8
+Record offset: 90: tt2813070, 7.3, 7
+Record offset: 108: tt2813078, 7.5, 11
+Record offset: 126: tt2813082, 7.4, 16
+Record offset: 144: tt2813088, 7.6, 5
+Record offset: 162: tt2813412, 5.6, 57
+Record offset: 180: tt2813422, 6.2, 24
+==========Block content(68975)==========
+Record offset: 0: tt3127434, 8.1, 500
+Record offset: 18: tt3127452, 6.3, 6
+Record offset: 36: tt3127478, 5.4, 5
+Record offset: 54: tt3127480, 7.2, 19
+Record offset: 72: tt3127486, 8, 15
+Record offset: 90: tt3127490, 6, 6
+Record offset: 108: tt3127512, 7, 5
+Record offset: 126: tt3127540, 8.2, 287
+Record offset: 144: tt3127610, 7.2, 5
+Record offset: 162: tt3127634, 8.8, 17
+Record offset: 180: tt3127636, 3.7, 842
+==========Block content(69397)==========
+Record offset: 0: tt3203364, 3.1, 188
+Record offset: 18: tt3203366, 8.2, 500
+Record offset: 36: tt3203382, 7.2, 5
+Record offset: 54: tt3203388, 8.4, 98
+Record offset: 72: tt3203394, 6.2, 13
+Record offset: 90: tt3203416, 7.1, 15
+Record offset: 108: tt3203426, 7.3, 23
+Record offset: 126: tt3203446, 7.2, 45
+Record offset: 144: tt3203450, 9.5, 47
+Record offset: 162: tt3203452, 7.5, 94
+Record offset: 180: tt3203458, 7.4, 8
+==========Block content(69573)==========
+Record offset: 0: tt3231390, 3.6, 500
+Record offset: 18: tt3231448, 6.7, 9
+Record offset: 36: tt3231476, 5.2, 12
+Record offset: 54: tt3231482, 7.5, 55
+Record offset: 72: tt3231486, 9.4, 7
+Record offset: 90: tt3231500, 6.6, 33
+Record offset: 108: tt3231534, 6.7, 39
+Record offset: 126: tt3231554, 7.9, 17
+Record offset: 144: tt3231564, 7.8, 7601
+Record offset: 162: tt3231570, 6.3, 10
+Record offset: 180: tt3231574, 7.1, 7
+==========Block content(69772)==========
+Record offset: 0: tt3263536, 7.6, 33
+Record offset: 18: tt3263538, 7.3, 31
+Record offset: 36: tt3263540, 7.5, 29
+Record offset: 54: tt3263548, 6, 169
+Record offset: 72: tt3263554, 6.7, 6
+Record offset: 90: tt3263568, 7.3, 194
+Record offset: 108: tt3263598, 7.3, 500
+Record offset: 126: tt3263608, 8, 15
+Record offset: 144: tt3263614, 6.6, 11346
+Record offset: 162: tt3263630, 8.6, 14
+Record offset: 180: tt3263648, 5.6, 29
+==========Block content(69843)==========
+Record offset: 0: tt3276204, 8.3, 14
+Record offset: 18: tt3276216, 8.2, 5
+Record offset: 36: tt3276232, 8.4, 5
+Record offset: 54: tt3276280, 8.3, 500
+Record offset: 72: tt3276282, 8.3, 456
+Record offset: 90: tt3276284, 8.2, 460
+Record offset: 108: tt3276286, 8.1, 437
+Record offset: 126: tt3276298, 6.8, 19
+Record offset: 144: tt3276324, 5.8, 6
+Record offset: 162: tt3276362, 6.1, 45
+Record offset: 180: tt3276390, 4.9, 156
+==========Block content(70547)==========
+Record offset: 0: tt3398672, 7.3, 18
+Record offset: 18: tt3398738, 3.4, 33
+Record offset: 36: tt3398768, 6, 17
+Record offset: 54: tt3398776, 6, 7
+Record offset: 72: tt3398780, 3.8, 21
+Record offset: 90: tt3398784, 8.2, 9
+Record offset: 108: tt3398786, 6.3, 6
+Record offset: 126: tt3398788, 4.7, 1272
+Record offset: 144: tt3398808, 5.5, 500
+Record offset: 162: tt3398866, 5.4, 13
+Record offset: 180: tt3398868, 5, 578
+==========Block content(70761)==========
+Record offset: 0: tt3440600, 3.2, 13
+Record offset: 18: tt3440652, 6.7, 6
+Record offset: 36: tt3440654, 6.1, 10
+Record offset: 54: tt3440674, 7.5, 22
+Record offset: 72: tt3440678, 7.9, 27
+Record offset: 90: tt3440694, 8, 9
+Record offset: 108: tt3440708, 6.8, 6
+Record offset: 126: tt3440718, 8.4, 186
+Record offset: 144: tt3440758, 7.7, 20
+Record offset: 162: tt3440760, 5.8, 9
+Record offset: 180: tt3440780, 7.1, 500
+==========Block content(71710)==========
+Record offset: 0: tt3592770, 7.6, 668
+Record offset: 18: tt3592808, 8.3, 15
+Record offset: 36: tt3592810, 4.9, 12
+Record offset: 54: tt3592818, 9.4, 8
+Record offset: 72: tt3592830, 7.5, 17
+Record offset: 90: tt3592834, 7.2, 9
+Record offset: 108: tt3592846, 7, 6
+Record offset: 126: tt3592850, 8.8, 21
+Record offset: 144: tt3592904, 2.3, 500
+Record offset: 162: tt3592924, 7.6, 5
+Record offset: 180: tt3592928, 6.3, 12
+==========Block content(72240)==========
+Record offset: 0: tt3682958, 7.5, 8
+Record offset: 18: tt3682960, 7.8, 8
+Record offset: 36: tt3682962, 7.9, 8
+Record offset: 54: tt3682964, 8, 8
+Record offset: 72: tt3683018, 9.5, 21
+Record offset: 90: tt3683030, 6.5, 752
+Record offset: 108: tt3683038, 4.5, 252
+Record offset: 126: tt3683072, 6, 500
+Record offset: 144: tt3683086, 4.8, 5
+Record offset: 162: tt3683102, 6.6, 14
+Record offset: 180: tt3683118, 8.3, 30
+==========Block content(73522)==========
+Record offset: 0: tt3916792, 7.6, 14
+Record offset: 18: tt3916804, 7.4, 8
+Record offset: 36: tt3916828, 6.9, 120
+Record offset: 54: tt3916858, 7.8, 500
+Record offset: 72: tt3916860, 8, 13
+Record offset: 90: tt3916902, 8.4, 42
+Record offset: 108: tt3916922, 8.5, 570
+Record offset: 126: tt3916932, 7.7, 6
+Record offset: 144: tt3916934, 8.8, 5
+Record offset: 162: tt3916950, 7, 9
+Record offset: 180: tt3916954, 7.1, 7
+==========Block content(74024)==========
+Record offset: 0: tt4038800, 9, 7
+Record offset: 18: tt4038806, 4.1, 329
+Record offset: 36: tt4038822, 9, 5
+Record offset: 54: tt4038840, 7.8, 251
+Record offset: 72: tt4038850, 7.5, 427
+Record offset: 90: tt4038860, 7.1, 408
+Record offset: 108: tt4038864, 7.3, 392
+Record offset: 126: tt4038884, 8, 9
+Record offset: 144: tt4038942, 7.2, 13
+Record offset: 162: tt4038962, 7, 33
+Record offset: 180: tt4038966, 6.4, 500
+==========Block content(75128)==========
+Record offset: 0: tt4247172, 7.4, 38
+Record offset: 18: tt4247174, 6, 96
+Record offset: 36: tt4247176, 7.1, 123
+Record offset: 54: tt4247202, 7.8, 5
+Record offset: 72: tt4247216, 6.4, 5
+Record offset: 90: tt4247234, 7.1, 7
+Record offset: 108: tt4247272, 8.4, 305
+Record offset: 126: tt4247276, 6.1, 44
+Record offset: 144: tt4247278, 7.8, 14
+Record offset: 162: tt4247292, 8.3, 550
+Record offset: 180: tt4247300, 7.9, 500
+==========Block content(75802)==========
+Record offset: 0: tt4392820, 8, 500
+Record offset: 18: tt4392854, 6.2, 6
+Record offset: 36: tt4392960, 9, 6
+Record offset: 54: tt4392976, 7.8, 47
+Record offset: 72: tt4392990, 8, 5
+Record offset: 90: tt4393006, 8.1, 715
+Record offset: 108: tt4393026, 7.2, 9
+Record offset: 126: tt4393028, 6.5, 12
+Record offset: 144: tt4393036, 5.1, 24
+Record offset: 162: tt4393054, 8.3, 708
+Record offset: 180: tt4393064, 6.7, 36
+==========Block content(76317)==========
+Record offset: 0: tt4493272, 6.6, 19
+Record offset: 18: tt4493280, 7.1, 19
+Record offset: 36: tt4493298, 7.9, 500
+Record offset: 54: tt4493300, 8, 433
+Record offset: 72: tt4493304, 8.2, 394
+Record offset: 90: tt4493312, 8.3, 382
+Record offset: 108: tt4493318, 8.3, 388
+Record offset: 126: tt4493390, 7.8, 63
+Record offset: 144: tt4493398, 9, 11
+Record offset: 162: tt4493432, 9.1, 10
+Record offset: 180: tt4493434, 7.2, 6
+==========Block content(76973)==========
+Record offset: 0: tt4627482, 7, 52
+Record offset: 18: tt4627488, 8, 500
+Record offset: 36: tt4627494, 8.9, 63
+Record offset: 54: tt4627502, 8.1, 408
+Record offset: 72: tt4627508, 8, 387
+Record offset: 90: tt4627512, 8.1, 381
+Record offset: 108: tt4627514, 8.8, 487
+Record offset: 126: tt4627528, 5.8, 12
+Record offset: 144: tt4627542, 6.9, 7
+Record offset: 162: tt4627558, 8.3, 94
+Record offset: 180: tt4627598, 8.4, 7
+==========Block content(77221)==========
+Record offset: 0: tt4680380, 6.6, 14
+Record offset: 18: tt4680444, 8.4, 2413
+Record offset: 36: tt4680484, 6.5, 13
+Record offset: 54: tt4680520, 8.3, 34
+Record offset: 72: tt4680556, 8, 9
+Record offset: 90: tt4680562, 7, 7
+Record offset: 108: tt4680564, 6.1, 337
+Record offset: 126: tt4680568, 4.6, 500
+Record offset: 144: tt4680570, 6.2, 36
+Record offset: 162: tt4680576, 4.9, 7
+Record offset: 180: tt4680604, 6.1, 7
+==========Block content(77403)==========
+Record offset: 0: tt4713620, 5.8, 9
+Record offset: 18: tt4713624, 5.9, 9
+Record offset: 36: tt4713628, 5.9, 9
+Record offset: 54: tt4713632, 7, 9
+Record offset: 72: tt4713634, 5.9, 9
+Record offset: 90: tt4713636, 6.9, 9
+Record offset: 108: tt4713652, 8.2, 500
+Record offset: 126: tt4713676, 7.3, 350
+Record offset: 144: tt4713680, 7.7, 308
+Record offset: 162: tt4713718, 8.4, 306
+Record offset: 180: tt4713746, 7.8, 312
+==========Block content(78231)==========
+Record offset: 0: tt4897562, 8.1, 1155
+Record offset: 18: tt4897564, 8.7, 1164
+Record offset: 36: tt4897566, 8.2, 1029
+Record offset: 54: tt4897572, 8, 979
+Record offset: 72: tt4897574, 8.7, 1135
+Record offset: 90: tt4897596, 9.2, 247
+Record offset: 108: tt4897602, 7.5, 731
+Record offset: 126: tt4897604, 7.7, 638
+Record offset: 144: tt4897608, 7.7, 500
+Record offset: 162: tt4897612, 8, 472
+Record offset: 180: tt4897616, 8.1, 442
+==========Block content(83957)==========
+Record offset: 0: tt6038828, 8.1, 9
+Record offset: 18: tt6038870, 7.5, 31
+Record offset: 36: tt6038896, 6.2, 8
+Record offset: 54: tt6038898, 5.9, 7
+Record offset: 72: tt6038902, 6.4, 28
+Record offset: 90: tt6038908, 6.4, 45
+Record offset: 108: tt6038920, 7.6, 106
+Record offset: 126: tt6038932, 8.1, 88
+Record offset: 144: tt6038938, 7.6, 68
+Record offset: 162: tt6038944, 7.5, 61
+Record offset: 180: tt6038946, 5.5, 500
+==========Block content(84044)==========
+Record offset: 0: tt6054310, 8.3, 36
+Record offset: 18: tt6054328, 3.1, 240
+Record offset: 36: tt6054340, 8.2, 37
+Record offset: 54: tt6054354, 8.8, 40
+Record offset: 72: tt6054362, 9.4, 9
+Record offset: 90: tt6054364, 8.7, 82
+Record offset: 108: tt6054370, 5.6, 500
+Record offset: 126: tt6054374, 3, 39
+Record offset: 144: tt6054378, 5.5, 459
+Record offset: 162: tt6054510, 8, 15
+Record offset: 180: tt6054560, 8.2, 82
+==========Block content(84911)==========
+Record offset: 0: tt6222334, 7.6, 8
+Record offset: 18: tt6222344, 7.6, 19
+Record offset: 36: tt6222346, 6, 7
+Record offset: 54: tt6222360, 4.9, 26
+Record offset: 72: tt6222362, 4.8, 6
+Record offset: 90: tt6222376, 8, 500
+Record offset: 108: tt6222530, 8.7, 7
+Record offset: 126: tt6222544, 8.9, 14
+Record offset: 144: tt6222546, 6.6, 5
+Record offset: 162: tt6222548, 9.3, 2408
+Record offset: 180: tt6222560, 8.4, 9
+==========Block content(84970)==========
+Record offset: 0: tt6232458, 7.2, 8
+Record offset: 18: tt6232500, 7.1, 37
+Record offset: 36: tt6232528, 9.3, 366
+Record offset: 54: tt6232560, 5.2, 500
+Record offset: 72: tt6232588, 6.2, 8
+Record offset: 90: tt6232592, 7.1, 13
+Record offset: 108: tt6232598, 6.1, 11
+Record offset: 126: tt6232836, 9.4, 670
+Record offset: 144: tt6232854, 6.2, 8
+Record offset: 162: tt6232898, 7.8, 12
+Record offset: 180: tt6232928, 9.2, 5
+==========Block content(85380)==========
+Record offset: 0: tt6318898, 4, 10
+Record offset: 18: tt6318906, 6.2, 16
+Record offset: 36: tt6318926, 6.7, 34
+Record offset: 54: tt6318928, 6.7, 28
+Record offset: 72: tt6318930, 6.7, 26
+Record offset: 90: tt6318934, 6.9, 18
+Record offset: 108: tt6318938, 6.3, 20
+Record offset: 126: tt6318940, 6.1, 20
+Record offset: 144: tt6318942, 6.7, 20
+Record offset: 162: tt6318954, 4.6, 500
+Record offset: 180: tt6318972, 6.2, 569
+==========Block content(88172)==========
+Record offset: 0: tt6985074, 5.5, 61
+Record offset: 18: tt6985078, 8.1, 255
+Record offset: 36: tt6985094, 7.1, 500
+Record offset: 54: tt6985144, 7.9, 39
+Record offset: 72: tt6985200, 7.5, 755
+Record offset: 90: tt6985228, 9.2, 9
+Record offset: 108: tt6985230, 9.6, 5
+Record offset: 126: tt6985232, 8.8, 5
+Record offset: 144: tt6985248, 8.6, 20
+Record offset: 162: tt6985298, 7.2, 6
+Record offset: 180: tt6985408, 7, 173
+==========Block content(88267)==========
+Record offset: 0: tt7008204, 3.6, 16
+Record offset: 18: tt7008252, 6.9, 46
+Record offset: 36: tt7008260, 6.3, 66
+Record offset: 54: tt7008276, 7.4, 9
+Record offset: 72: tt7008292, 4.4, 5
+Record offset: 90: tt7008310, 4.5, 500
+Record offset: 108: tt7008326, 4.1, 16
+Record offset: 126: tt7008368, 5.2, 19
+Record offset: 144: tt7008424, 5.5, 6
+Record offset: 162: tt7008438, 5.5, 11
+Record offset: 180: tt7008444, 4.5, 10
+==========Block content(89899)==========
+Record offset: 0: tt7431044, 5.9, 8
+Record offset: 18: tt7431062, 5, 5
+Record offset: 36: tt7431186, 7.2, 193
+Record offset: 54: tt7431492, 6.7, 6
+Record offset: 72: tt7431570, 5.6, 22
+Record offset: 90: tt7431572, 6.2, 9
+Record offset: 108: tt7431594, 1.9, 32292
+Record offset: 126: tt7431616, 6.8, 5
+Record offset: 144: tt7431656, 7.9, 456
+Record offset: 162: tt7431738, 7.2, 500
+Record offset: 180: tt7431740, 8, 6
+==========Block content(89989)==========
+Record offset: 0: tt7457558, 7.3, 12
+Record offset: 18: tt7457598, 7.4, 5
+Record offset: 36: tt7457604, 8.1, 9
+Record offset: 54: tt7457648, 6.3, 6
+Record offset: 72: tt7457658, 6.3, 6
+Record offset: 90: tt7457664, 7.5, 8
+Record offset: 108: tt7457686, 1.6, 20
+Record offset: 126: tt7457694, 8.2, 5
+Record offset: 144: tt7457714, 7.8, 500
+Record offset: 162: tt7457716, 7, 52
+Record offset: 180: tt7457718, 8, 497
+==========Block content(90176)==========
+Record offset: 0: tt7517214, 8, 8
+Record offset: 18: tt7517222, 8.3, 6
+Record offset: 36: tt7517228, 8.8, 8
+Record offset: 54: tt7517232, 4.1, 100
+Record offset: 72: tt7517284, 8.5, 6
+Record offset: 90: tt7517310, 6.3, 13
+Record offset: 108: tt7517316, 8.4, 3947
+Record offset: 126: tt7517318, 8.5, 3348
+Record offset: 144: tt7517330, 6.9, 119
+Record offset: 162: tt7517336, 8.1, 500
+Record offset: 180: tt7517376, 5.6, 12
+==========Block content(90849)==========
+Record offset: 0: tt7689390, 7, 12
+Record offset: 18: tt7689424, 7.1, 787
+Record offset: 36: tt7689432, 7.8, 8
+Record offset: 54: tt7689460, 5.1, 3119
+Record offset: 72: tt7689478, 7.8, 5
+Record offset: 90: tt7689484, 7.1, 431
+Record offset: 108: tt7689488, 7.3, 29
+Record offset: 126: tt7689492, 7.2, 30
+Record offset: 144: tt7689500, 7.3, 30
+Record offset: 162: tt7689506, 8.6, 7
+Record offset: 180: tt7689514, 8.5, 500
+==========Block content(91457)==========
+Record offset: 0: tt7859374, 7.9, 14
+Record offset: 18: tt7859662, 7.6, 183
+Record offset: 36: tt7859666, 7.9, 195
+Record offset: 54: tt7859678, 8.4, 268
+Record offset: 72: tt7859684, 7.8, 177
+Record offset: 90: tt7859700, 7.5, 166
+Record offset: 108: tt7859722, 3, 22
+Record offset: 126: tt7859878, 7.9, 170
+Record offset: 144: tt7860056, 8.2, 12
+Record offset: 162: tt7860116, 8.4, 500
+Record offset: 180: tt7860126, 6.7, 9
+==========Block content(92089)==========
+Record offset: 0: tt8044674, 7.4, 9
+Record offset: 18: tt8044824, 9.2, 500
+Record offset: 36: tt8044844, 8, 148
+Record offset: 54: tt8044848, 8.2, 191
+Record offset: 72: tt8044902, 7.9, 74
+Record offset: 90: tt8044916, 8.1, 86
+Record offset: 108: tt8044926, 6.8, 18
+Record offset: 126: tt8044930, 8.5, 287
+Record offset: 144: tt8044942, 9.8, 5
+Record offset: 162: tt8044982, 7.8, 13
+Record offset: 180: tt8044984, 9.8, 5
+==========Block content(94842)==========
+Record offset: 0: tt8960548, 4.5, 127
+Record offset: 18: tt8960566, 7.5, 15
+Record offset: 36: tt8960568, 7, 47
+Record offset: 54: tt8960572, 6, 500
+Record offset: 72: tt8960592, 9.2, 22
+Record offset: 90: tt8960608, 7.7, 70
+Record offset: 108: tt8960614, 8.5, 19
+Record offset: 126: tt8960666, 8.5, 21
+Record offset: 144: tt8960696, 6.8, 30
+Record offset: 162: tt8960700, 7, 5
+Record offset: 180: tt8960824, 7.6, 32
+==========Block content(96297)==========
+Record offset: 0: tt9454480, 8.4, 534
+Record offset: 18: tt9454482, 8.8, 540
+Record offset: 36: tt9454484, 8.7, 500
+Record offset: 54: tt9454486, 8.6, 487
+Record offset: 72: tt9454488, 8.4, 478
+Record offset: 90: tt9454492, 9.3, 576
+Record offset: 108: tt9454496, 9, 516
+Record offset: 126: tt9454500, 9.3, 584
+Record offset: 144: tt9454502, 9.6, 705
+Record offset: 162: tt9454504, 8, 53
+Record offset: 180: tt9454506, 7.7, 50
+==========Block content(96630)==========
+Record offset: 0: tt9614540, 8.6, 113
+Record offset: 18: tt9614542, 8.4, 115
+Record offset: 36: tt9614556, 7, 5
+Record offset: 54: tt9614592, 6.2, 24
+Record offset: 72: tt9614612, 7.7, 500
+Record offset: 90: tt9614620, 6.4, 5
+Record offset: 108: tt9614630, 8.2, 83
+Record offset: 126: tt9614642, 7, 8
+Record offset: 144: tt9614652, 6.9, 8
+Record offset: 162: tt9614666, 7.5, 8
+Record offset: 180: tt9614668, 7.9, 7
+==========Block content(96790)==========
+Record offset: 0: tt9680906, 7.9, 387
+Record offset: 18: tt9680914, 7.1, 500
+Record offset: 36: tt9680920, 8.2, 368
+Record offset: 54: tt9680940, 8.4, 361
+Record offset: 72: tt9680954, 8.2, 352
+Record offset: 90: tt9680968, 7.4, 67
+Record offset: 108: tt9680994, 8.6, 353
+Record offset: 126: tt9680996, 8.6, 357
+Record offset: 144: tt9680998, 8.3, 362
+Record offset: 162: tt9681000, 8.7, 384
+Record offset: 180: tt9681004, 9, 413
+==========Block content(97246)==========
+Record offset: 0: tt9895038, 8.7, 462
+Record offset: 18: tt9895046, 8.7, 442
+Record offset: 36: tt9895050, 9, 500
+Record offset: 54: tt9895108, 4.6, 5
+Record offset: 72: tt9895116, 7.8, 8
+Record offset: 90: tt9895124, 6.8, 6
+Record offset: 108: tt9895176, 6.8, 6
+Record offset: 126: tt9895178, 9.1, 32
+Record offset: 144: tt9895370, 8.4, 14
+Record offset: 162: tt9895382, 7, 6
+Record offset: 180: tt9895608, 6.6, 5
+Number of blocks accessed: 110
+==========Average Rating of Records==========
+Average Rating: 6.73182
+
+Process finished with exit code 0

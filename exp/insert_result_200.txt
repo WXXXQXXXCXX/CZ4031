@@ -1,0 +1,16 @@
+/Users/qiaochuwang/Documents/GitHub/CZ4031/cmake-build-debug/CZ4031 200
+=========B+Tree parameters=========
+n = 16
+number of nodes: 1747
+height: 4
+root:
+[9]1342[8]2631[8]3897[13]5970[15]8878[10]12134[16]20151[8]30034[11]49802[15]125979[9]-[-1]-[-1]-[-1]-[-1]-[-1]-[-1]
+first child node of root:
+[8]106[14]267[15]448[10]573[13]726[10]837[10]960[12]1122[8]1224[9]-[-1]-[-1]-[-1]-[-1]-[-1]-[-1]-[-1]
+=========memory use in total=========
+number of blocks: 97302
+total occupied bytes: 19265724
+memory occupied by all blocks: 19460400bytes = 19.4604MB
+number of records inserted: 1070318
+
+Process finished with exit code 0
