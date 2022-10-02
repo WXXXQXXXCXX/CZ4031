@@ -31,7 +31,7 @@ void BPTree::printInnerNode(Node *node){
 void BPTree::printLeafNode(Node *node){
     for(int i=0; i<MAX; i++){
         int s=-1;
-        if(node->ptr[i] && i<=node->num_keys){
+        if(node->ptr[i] && i<node->num_keys){
             list<int> *n = reinterpret_cast<list<int>*>(node->ptr[i]);
             s = n->size();
         }
@@ -59,13 +59,14 @@ int BPTree::getTreeInfo() {
     while(level<=height){
         num_nodes += q.size();
         queue<Node> newQ;
+        cout<<"level "<<level<<"num nodes: "<< q.size()<<"\n";
         int i=0;
         while (!q.empty()){
             i++;
             Node n = q.front();
             q.pop();
             for(int i=0; i<=n.num_keys; i++){
-                if(n.ptr[i]!= NULL){
+                if(n.ptr[i]!= NULL && !n.is_leaf){
                     newQ.push(*reinterpret_cast<Node*>(n.ptr[i]));
                 }
             }
@@ -80,6 +81,7 @@ int BPTree::getTreeInfo() {
     cout<<"\nfirst child node of root:\n";
     printInnerNode(getFirstNode(root));
     cout<<"\n";
+    return num_nodes;
 }
 
 void BPTree::printTree() {
@@ -103,7 +105,7 @@ void BPTree::printTree() {
                 printInnerNode(&n);
             }
             for(int i=0; i<=n.num_keys; i++){
-                if(n.ptr[i]!= NULL){
+                if(n.ptr[i]!= nullptr && !n.is_leaf){
                     newQ.push(*reinterpret_cast<Node*>(n.ptr[i]));
                 }
             }
@@ -147,6 +149,10 @@ int BPTree::getCountNode() {
     return count_node;
 }
 
-int BPTree::getHeight() {
-    return height;
+int BPTree::getCoundMerge() {
+    return count_merge;
+}
+
+void BPTree::resetCountMerge() {
+    count_merge = 0;
 }

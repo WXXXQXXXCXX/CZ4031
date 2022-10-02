@@ -33,10 +33,14 @@ list<int> BPTree::find(int key) {
     Node * cur = root;
     while(depth--!=0){
         count_node ++;
+        printInnerNode(cur);
+        cout<<"\n";
         int idx = findChildForKey(cur, key);
         cur = reinterpret_cast<Node *> (cur->ptr[idx]);
     }
     count_node ++;
+    printLeafNode(cur);
+    cout<<"\n";
     int idx = findSlotInNode(cur, key);
     list<int> ans;
     if(key == cur->key[idx]){

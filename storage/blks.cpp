@@ -138,16 +138,18 @@ int Memory::end_access_count() {
     int vis_cnt = vis.size();
     for(int pos: vis){
         int blk_start = pos*blk_size;
-        cout<<"==========Block content"<<"("<<pos<<")"<<"=========="<<"\n";
+        cout<<"Block content"<<"("<<pos<<")\n";
         for(int i=0; i+REC_LENGTH<blk_size; i+=REC_LENGTH){
             Record rec;
             rec_read(new RecPtr{.pos=i+blk_start},&rec);
             if(rec.avg_rating==0 && rec.num_votes==0){
                 cout<<"Record offset: "<<i<<": empty"<<"\n";
             }else {
-                cout<<"Record offset: "<<i<<": "<<rec.tconst<<", "<<rec.avg_rating<<", "<<rec.num_votes<<"\n";
+                cout<<rec.tconst<<" ";
             }
+            if((i/REC_LENGTH+1)%3 == 0) cout<<"\n";
         }
+        cout<<"\n";
     }
     vis.clear();
     return vis_cnt;

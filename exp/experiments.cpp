@@ -27,6 +27,20 @@ void range(int low, int high, BPTree *tree, Memory *mem){
 
 void find(int num, BPTree *tree, Memory *mem){
 
+    list<int> ans = tree->find(num);
+    mem->start_access_count();
+    double avg_rating = 0;
+    for (int pos:ans){
+        Record rec = Record();
+        mem->rec_read(new RecPtr{.pos=pos}, &rec);
+        avg_rating += rec.avg_rating;
+
+    }
+    cout<<"==========Block access info==========\n";
+    int cnt = mem->end_access_count();
+    cout<<"total blocks accessed: "<< cnt<<"\n";
+    cout<<"mean of averageRating: "<<avg_rating/ans.size()<<"\n";
+    cout<<"number of nodes accessed: "<<tree->getCountNode()<<"\n";
 }
 
 void del(int num, BPTree *tree, Memory *mem){
@@ -34,18 +48,19 @@ void del(int num, BPTree *tree, Memory *mem){
     for (int pos:ans){
         Record rec = Record();
         mem->rec_delete(new RecPtr{.pos=pos});
-        cout<<rec.tconst<<", "<<rec.avg_rating<<", "<<rec.num_votes<<"\n";
+
     }
     cout<<"number of records found: "<<ans.size()<<"\n";
     cout<<"=========B+Tree parameters=========\n";
     tree->getTreeInfo();
 }
 
-void insert(BPTree *tree, Memory *mem){
-    ifstream f("../data.tsv");
+void insert(BPTree *tree, Memory *mem, string file_path){
+    ifstream f(file_path);
     string line;
     getline(f, line);
     int i=0;
+
     while(getline(f, line)){
         stringstream iss(line);
         string tconst; string a; string b;
@@ -60,7 +75,7 @@ void insert(BPTree *tree, Memory *mem){
         strcpy(rec.tconst, tconst.c_str());
         RecPtr ptr;
         mem->rec_insert(&ptr, rec);
-        //cout<<"RecPtr, i="<<i<<", pos="<<ptr.pos<<"\n";
+
         tree->insert(ptr, atoi(b.c_str()));
         i++;
     }
@@ -73,11 +88,37 @@ void insert(BPTree *tree, Memory *mem){
 
 }
 
+void delete_range(int low, int high, BPTree *tree, Memory *mem){
+    tree->resetCountMerge();
+    for(int i=low; i<high; i++){
+        list<int> ans= tree->del(i);
+        for (int pos:ans){
+            Record rec = Record();
+            mem->rec_delete(new RecPtr{.pos=pos});
+
+        }
+    }
+    cout<<"number of merges: "<<tree->getCoundMerge()<<"\n";
+    tree->getTreeInfo();
+}
 int main(int argc,char* argv[]){
     int blk_size = atoi(argv[1]);
+    string file_path = argv[2];
     Memory mem = Memory(100000000, blk_size);
     BPTree tree = BPTree();
-    insert(&tree, &mem);
+    //Experiment 1&2
+    insert(&tree, &mem, file_path);
+
+    //Experiment 3
+    find(500, &tree, &mem);
+    //Experiment 4
+    range(30000,40000,&tree, &mem);
+    //tree.printTree();
+    //find(500, &tree, &mem);
+    //Experiment 5
     del(1000, &tree, &mem);
-    //range(30000,40000,&tree,&mem);
+    //delete_range(100,200, &tree, &mem);
+    //tree.printTree();
+
+
 }

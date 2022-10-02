@@ -7,7 +7,7 @@
 //8 bit pointer, 4 bit key, 8*(n+1)+sizeof(int)*n = block_size;
 //block_size=200, MAX = 16
 //block_size=500, MAX = 41
-const int MAX = 41;
+const int MAX = 16;
 
 
 struct Node {
@@ -28,6 +28,8 @@ class BPTree {
     Node* root;
     int height;
     int count_node;
+    int count_merge;
+    int *target;
     void removeKey(Node *node, int idx);
     Node* deleteAndBalance(int key, int *alt_idx, bool *need_remove, list<int>* ans,
                            Node *cur, Node *left, Node *right,
@@ -46,9 +48,9 @@ public:
     list<int> findRange(int, int);
 
     list<int> del(int);
-    Node* getRoot();
     void printTree();
-    int getHeight();
+    int getCoundMerge();
+    void resetCountMerge();
     int getCountNode();
     int getTreeInfo();
 
